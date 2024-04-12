@@ -1,12 +1,12 @@
 import './App.css'
 import { Outlet } from 'react-router-dom';
-import Nav from './components/NavTabs';
+import Layout from './components/layouts/Layout';
 
 function App() {
   return (
     <>
-      <Nav />
-      <main className="mx-3">
+      <main>
+        <Layout />
         <Outlet />
       </main>
     </>
