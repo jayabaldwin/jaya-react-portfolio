@@ -1,3 +1,9 @@
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+
+
+
 import { Link, useLocation } from "react-router-dom";
 
 function NavTabs() {
@@ -44,3 +50,6 @@ function NavTabs() {
 }
 
 export default NavTabs;
+
+
+export default Layout;
