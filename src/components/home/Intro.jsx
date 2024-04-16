@@ -4,13 +4,12 @@ import React from "react";
 
 export default function Intro() {
     return (
-        <div>
-            <h3>Jaya Baldwin</h3>
+        <>
+        <h3>Jaya Baldwin</h3>
 
-            <h1>Web +
+        <h1>Web +
                 Developer
-            </h1>
-
-        </div>
+        </h1>
+        </>
     )
 };

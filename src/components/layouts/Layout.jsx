@@ -5,6 +5,7 @@ import Nav from "./Nav.jsx";
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import { flexbox } from '@mui/system';
 
 const Item = styled(Box)(({ theme }) => ({
   textAlign: 'center',
@@ -18,12 +19,10 @@ export default function Layout({ children }) {
             <LeftLogo />
         </Grid>
         {/* Main content */}
-        <Grid item xs={8}>
-          <Item>
+        <Grid container item xs={8}>
             {children}
             {/* Bottom navbar */}
              <Nav />
-          </Item>
         </Grid>
         {/* Socials sidebar */}
         <Grid item xs={2}>
