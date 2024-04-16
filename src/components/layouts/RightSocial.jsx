@@ -8,6 +8,14 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import SendIcon from '@mui/icons-material/Send';
 import Tooltip from '@mui/material/Tooltip';
 
+const socialIcons = [
+  { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com/jayabaldwin' },
+  { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/jaya-baldwin-489122204/' },
+  { icon: <LayersIcon />, label: 'Stack Overflow', href: 'https://stackoverflow.com/users/16069392/jaya-baldwin' },
+  { icon: <SendIcon />, label: 'Email', href: `mailto:jayastarrbaldwin@gmail.com` },
+  { icon: <SaveAltIcon />, label: 'Resumé', href: '#' }, // Add your resume link
+];
+
 export default function RightSocial() {
   return (
     <Grid
@@ -16,43 +24,16 @@ export default function RightSocial() {
       justifyContent="space-around"
       alignItems="flex-end"
       sx={{
-        position: 'fixed',
-        top: '50%', // Adjust top position as needed
-        right: '20px', // Adjust right position as needed
-        transform: 'translateY(-50%)', // Center vertically
-        zIndex: 1000, // Ensure it's above other content
-        '& > *': { my: 1 } // Add spacing between items
+        '& > *': { my: 1 }
       }}
     >
-      <Tooltip title='GitHub' placement="right-start" arrow>
-        <Fab color="secondary" aria-label="add">
-        <GitHubIcon />
-        </Fab>
-      </Tooltip>
-
-      <Tooltip title='LinkedIn' placement="right-start" arrow>
-        <Fab color="secondary" aria-label="add">
-        <LinkedInIcon />
-        </Fab>
-      </Tooltip>
-
-      <Tooltip title='Stack Overflow' placement="right-start" arrow>
-        <Fab color="secondary" aria-label="add">
-        <LayersIcon />
-        </Fab>
-      </Tooltip>
-
-      <Tooltip title='Email' placement="right-start" arrow>
-        <Fab color="secondary" aria-label="add">
-        <SendIcon />
-        </Fab>
-      </Tooltip>
-
-      <Tooltip title='Resume' placement="right-start" arrow>
-        <Fab color="secondary" aria-label="add">
-        <SaveAltIcon />
-        </Fab>
-      </Tooltip>
+      {socialIcons.map(({ icon, label, href }, index) => (
+        <Tooltip key={index} title={label} placement="right-start" arrow>
+          <Fab color="secondary" aria-label={label} href={href}>
+            {icon}
+          </Fab>
+        </Tooltip>
+      ))}
     </Grid>
   );
 }
