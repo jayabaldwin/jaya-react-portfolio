@@ -13,7 +13,7 @@ const styles = {
     justifyContent: 'space-between',
   },
   logo: {
-    width: '100px',
+    width: '200px',
     height: 'auto',
   },
 }

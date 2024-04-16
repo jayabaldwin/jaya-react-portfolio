@@ -13,7 +13,7 @@ const socialIcons = [
   { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/jaya-baldwin-489122204/' },
   { icon: <LayersIcon />, label: 'Stack Overflow', href: 'https://stackoverflow.com/users/16069392/jaya-baldwin' },
   { icon: <SendIcon />, label: 'Email', href: `mailto:jayastarrbaldwin@gmail.com` },
-  { icon: <SaveAltIcon />, label: 'Resumé', href: '#' }, // Add your resume link
+  { icon: <SaveAltIcon />, label: 'Resumé', href: '#' }, // Add resume file download link
 ];
 
 export default function RightSocial() {
@@ -23,13 +23,24 @@ export default function RightSocial() {
       direction="column"
       justifyContent="space-around"
       alignItems="flex-end"
+      // Add opacity, elevation and animation
       sx={{
         '& > *': { my: 1 }
       }}
     >
       {socialIcons.map(({ icon, label, href }, index) => (
-        <Tooltip key={index} title={label} placement="right-start" arrow>
-          <Fab color="secondary" aria-label={label} href={href}>
+        <Tooltip 
+          key={index} 
+          title={label} 
+          // Edit placement, size and color
+          placement="right-start" 
+          arrow 
+          color="secondary"
+          >
+          <Fab 
+          color="secondary" 
+          aria-label={label} 
+          href={href}>
             {icon}
           </Fab>
         </Tooltip>

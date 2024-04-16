@@ -4,16 +4,10 @@ import RightSocial from "./RightSocial.jsx"
 import Nav from "./Nav.jsx";
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
 
-
-const Item = styled(Paper)(({ theme }) => ({
-  // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  // ...theme.typography.body2,
-  padding: theme.spacing(1),
+const Item = styled(Box)(({ theme }) => ({
   textAlign: 'center',
-  height: '90vh'
-  // color: theme.palette.text.secondary,
 }));
 
 export default function Layout({ children }) {
@@ -25,10 +19,10 @@ export default function Layout({ children }) {
         </Grid>
         {/* Main content */}
         <Grid item xs={8}>
-          <Item>Main Content
+          <Item>
             {children}
             {/* Bottom navbar */}
-            <Nav />
+             <Nav />
           </Item>
         </Grid>
         {/* Socials sidebar */}
