@@ -1,7 +1,7 @@
 import React from 'react';
 import LeftLogo from "./LeftLogo.jsx"
 import RightSocial from "./RightSocial.jsx"
-import Nav from "./Nav.jsx";
+// import Nav from "./Nav.jsx";
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -21,8 +21,7 @@ export default function Layout({ children }) {
         {/* Main content */}
         <Grid container item xs={8}>
             {children}
-            {/* Bottom navbar */}
-             <Nav />
+           
         </Grid>
         {/* Socials sidebar */}
         <Grid item xs={2}>

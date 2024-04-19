@@ -1,6 +1,4 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
@@ -25,20 +23,23 @@ export default function Nav() {
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
-        elevation={3}
         sx={{
-            backgroundColor: 'rgba(128, 128, 128, 0.5)', 
-            borderRadius: '20px', 
+            background: 'transparent',
+            rotate: '-90deg',
+            transformOrigin: 'left',
             position: 'fixed',
-            bottom: 30,
-            left: '40%',
-            right: '40%'
+            top: '65vh',
+            marginLeft: '30px'
         }}
       >
         {navIcons.map(({ label, icon }, index ) => (
-            <BottomNavigationAction key={index} label={label} icon={icon}
+            <BottomNavigationAction key={index} label={label}
             sx={{
-                color: 'white',
+              color: 'white',
+              '.MuiBottomNavigationAction-label': {
+                fontSize: '1rem', 
+                padding: '0.45rem'
+              },
             }} 
             />))}
       </BottomNavigation>

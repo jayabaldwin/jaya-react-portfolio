@@ -9,19 +9,19 @@ import Intro from './components/home/Intro.jsx'
 const theme = createTheme({
   palette: {
     background: {
-      default: '#000000',
+      default: '#EDBAAB',
     },
     primary: {
-      main: '#B6742A',
-      light: '#EFEAE3',
-      dark: '#655446',
-      contrastText: '#fff',
+      main: '#000000',
+      // light: '#EFEAE3',
+      // dark: '#655446',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#B6742A',
-      light: '#EFEAE3',
-      dark: '#655446',
-      contrastText: '#fff',
+      main: '#ffffff',
+      // light: '#EFEAE3',
+      // dark: '#655446',
+      contrastText: '#000000',
     }
   },
   typography: {
