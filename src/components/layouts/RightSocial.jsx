@@ -6,7 +6,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LayersIcon from '@mui/icons-material/Layers';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import SendIcon from '@mui/icons-material/Send';
-import Tooltip from '@mui/material/Tooltip';
+// import Tooltip from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
 const socialIcons = [
   { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com/jayabaldwin' },
@@ -16,14 +18,20 @@ const socialIcons = [
   { icon: <SaveAltIcon />, label: 'Resumé', href: '#' }, // Add resume file download link
 ];
 
+const StyledTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.common.black,
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.black,
+  },
+}));
+
 export default function RightSocial() {
   return (
     <Box
-      container
-      direction="column"
-      justifyContent="space-around"
-      alignItems="flex-end"
-      // Add opacity, elevation and animation
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -33,13 +41,11 @@ export default function RightSocial() {
       }}
     >
       {socialIcons.map(({ icon, label, href }, index) => (
-        <Tooltip 
+        <StyledTooltip 
           key={index} 
           title={label} 
-          // Edit placement, size and color
-          placement="right-start" 
+          placement="left"
           arrow 
-          color="primary"
           >
           <Fab 
           color="primary" 
@@ -53,7 +59,7 @@ export default function RightSocial() {
           }}>
             {icon}
           </Fab>
-        </Tooltip>
+        </StyledTooltip>
       ))}
     </Box>
   );

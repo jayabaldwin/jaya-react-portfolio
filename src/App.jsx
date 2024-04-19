@@ -3,14 +3,15 @@ import { Outlet } from 'react-router-dom';
 import Layout from './components/layouts/Layout';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import Intro from './components/home/Intro.jsx'
+import About from './components/home/About.jsx'
+import Intro from './components/home/Intro.jsx';
 
 // Completely rework color pallete 
 const theme = createTheme({
   palette: {
-    background: {
-      default: '#EDBAAB',
-    },
+    // background: {
+    //   default: '#EDBAAB',
+    // },
     primary: {
       main: '#000000',
       // light: '#EFEAE3',
@@ -43,6 +44,27 @@ function App() {
       }}>
         <Layout>
           <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
+          <Intro />
+          <About />
         </Layout>
         <Outlet />
       </main>

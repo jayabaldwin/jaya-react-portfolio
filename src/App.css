@@ -16,9 +16,9 @@ h1, h2, h3, h4, h5, h6, p {
 } */
 
 body {
-  background: linear-gradient(300deg,deepskyblue,darkviolet,blue);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
+  background: linear-gradient(105deg,#0d324d,#1b4e74,#7f5a83,#ad94af);
+  background-size: 240% 240%;
+  animation: gradient-animation 24s ease infinite;
 }
 
 @keyframes gradient-animation {

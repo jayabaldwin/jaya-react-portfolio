@@ -19,9 +19,8 @@ export default function Layout({ children }) {
             <LeftLogo />
         </Grid>
         {/* Main content */}
-        <Grid container item xs={8}>
+        <Grid item xs={8}>
             {children}
-           
         </Grid>
         {/* Socials sidebar */}
         <Grid item xs={2}>
