@@ -45,26 +45,6 @@ function App() {
         <Layout>
           <Intro />
           <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
-          <Intro />
-          <About />
         </Layout>
         <Outlet />
       </main>

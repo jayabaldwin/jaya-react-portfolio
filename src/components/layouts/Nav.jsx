@@ -28,7 +28,7 @@ export default function Nav() {
             rotate: '-90deg',
             transformOrigin: 'left',
             position: 'fixed',
-            top: '65vh',
+            top: '35rem',
             marginLeft: '30px'
         }}
       >
