@@ -2,6 +2,7 @@ import * as React from 'react';
 // import Box from '@mui/system/Box';
 import Grid from '@mui/system/Unstable_Grid';
 import styled from '@mui/system/styled';
+import { width } from '@mui/system';
 // import DividerChips from '../ui/DividerChips';
 // import Divider from '@mui/material/Divider'
 
@@ -35,7 +36,7 @@ export default function About() {
         </Grid>
         <Grid xs={4}>
           <Item>
-            <img src="src/assets/images/profile-image.png" alt="Profile Image" />
+            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '450px' }} />
           </Item>
         </Grid>
       </Grid>
