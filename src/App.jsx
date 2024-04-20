@@ -39,9 +39,7 @@ function App() {
     <>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <main sx={{
-
-      }}>
+      <main>
         <Layout>
           <Intro />
           <About />

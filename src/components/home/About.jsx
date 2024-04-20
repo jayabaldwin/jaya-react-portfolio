@@ -1,17 +1,10 @@
 import * as React from 'react';
-// import Box from '@mui/system/Box';
 import Grid from '@mui/system/Unstable_Grid';
 import styled from '@mui/system/styled';
-import { width } from '@mui/system';
-// import DividerChips from '../ui/DividerChips';
-// import Divider from '@mui/material/Divider'
 
 const Item = styled('div')(({ theme }) => ({
   background: 'transparent',
-  // border: '1px solid',
-  // borderColor: theme.palette.mode === 'dark' ? '#444d58' : '#ced7e0',
   padding: theme.spacing(1),
-  // borderRadius: '4px',
   textAlign: 'left',
 }));
 
@@ -28,18 +21,15 @@ function AboutMe() {
 
 export default function About() {
   return (
-    // <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-      {/* <DividerChips centerText="About"/> */}
         <Grid xs={8}>
           <Item><AboutMe/></Item>
         </Grid>
         <Grid xs={4}>
           <Item>
-            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '450px' }} />
+            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '450px', marginTop: '3rem' }} />
           </Item>
         </Grid>
       </Grid>
-    // </Box>
   );
 }
