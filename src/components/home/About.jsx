@@ -11,6 +11,7 @@ const Item = styled('div')(({ theme }) => ({
 function AboutMe() {
   return (
     <>
+    <h3>Introduction</h3>
     <h2>About Me</h2>
     <p>With a background rich in communication and interpersonal skills, complemented by my energetic personality, I thrive in collaborative environments. As a highly detail-oriented individual, I ensure precision and accuracy in all my work, committed to delivering high-quality outcomes while adapting to new challenges. My multitasking capabilities and communication skills have proven vital in navigating the fast-paced demands of my current industry and I excel in resolving customer issues with empathy and professionalism.</p>
     <br/>
@@ -21,13 +22,13 @@ function AboutMe() {
 
 export default function About() {
   return (
-      <Grid container spacing={2} >
-        <Grid xs={8} sx={{ mb: '3'}}>
+      <Grid container spacing={2} sx={{ mb: '5rem'}}>
+        <Grid xs={8}>
           <Item><AboutMe/></Item>
         </Grid>
         <Grid xs={4}>
           <Item>
-            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '450px', marginTop: '3rem' }} />
+            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '240px', marginTop: '3rem' }} />
           </Item>
         </Grid>
       </Grid>
