@@ -3,8 +3,10 @@ import { Outlet } from 'react-router-dom';
 import Layout from './components/layouts/Layout';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import About from './components/home/About.jsx'
-import Intro from './components/home/Intro.jsx';
+import Home from './pages/Home.jsx'
+// import About from './components/home/About.jsx'
+// import Intro from './components/home/Intro.jsx';
+// import Skills from './components/home/Skills.jsx'
 
 // Completely rework color pallete 
 const theme = createTheme({
@@ -39,12 +41,12 @@ function App() {
     <>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <main sx={{
-
-      }}>
+      <main>
         <Layout>
-          <Intro />
+          {/* <Intro />
           <About />
+          <Skills /> */}
+          <Home />
         </Layout>
         <Outlet />
       </main>

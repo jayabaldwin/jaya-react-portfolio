@@ -1,23 +1,17 @@
 import * as React from 'react';
-// import Box from '@mui/system/Box';
 import Grid from '@mui/system/Unstable_Grid';
 import styled from '@mui/system/styled';
-import { width } from '@mui/system';
-// import DividerChips from '../ui/DividerChips';
-// import Divider from '@mui/material/Divider'
 
 const Item = styled('div')(({ theme }) => ({
   background: 'transparent',
-  // border: '1px solid',
-  // borderColor: theme.palette.mode === 'dark' ? '#444d58' : '#ced7e0',
   padding: theme.spacing(1),
-  // borderRadius: '4px',
   textAlign: 'left',
 }));
 
 function AboutMe() {
   return (
     <>
+    <h3>Introduction</h3>
     <h2>About Me</h2>
     <p>With a background rich in communication and interpersonal skills, complemented by my energetic personality, I thrive in collaborative environments. As a highly detail-oriented individual, I ensure precision and accuracy in all my work, committed to delivering high-quality outcomes while adapting to new challenges. My multitasking capabilities and communication skills have proven vital in navigating the fast-paced demands of my current industry and I excel in resolving customer issues with empathy and professionalism.</p>
     <br/>
@@ -28,18 +22,15 @@ function AboutMe() {
 
 export default function About() {
   return (
-    // <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-      {/* <DividerChips centerText="About"/> */}
+      <Grid container spacing={2} sx={{ mb: '5rem'}}>
         <Grid xs={8}>
           <Item><AboutMe/></Item>
         </Grid>
         <Grid xs={4}>
           <Item>
-            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '450px' }} />
+            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '240px', marginTop: '3rem' }} />
           </Item>
         </Grid>
       </Grid>
-    // </Box>
   );
 }

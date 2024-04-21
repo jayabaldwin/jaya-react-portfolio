@@ -32,8 +32,10 @@ export default function Nav() {
             marginLeft: '30px'
         }}
       >
-        {navIcons.map(({ label, icon }, index ) => (
-            <BottomNavigationAction key={index} label={label}
+        {navIcons.map(({ label }, index ) => (
+            <BottomNavigationAction 
+            key={index} 
+            label={label}
             sx={{
               color: 'white',
               '.MuiBottomNavigationAction-label': {

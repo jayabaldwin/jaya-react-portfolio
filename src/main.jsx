@@ -4,16 +4,17 @@ import App from './App';
 // import Error from './pages/Error';
 // import Home from './pages/Home';
 // import Contact from './pages/Contact';
+// import About from './components/home/About.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    // errorElement: <Error />,
+    errorElement: <Error />,
     // children: [
     //   {
     //     index: true,
-    //     element: <Home />,
+    //     element: <About />,
     //   },
     //   // {
     //   //   path: '/Contact',
