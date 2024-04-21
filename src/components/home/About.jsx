@@ -21,8 +21,8 @@ function AboutMe() {
 
 export default function About() {
   return (
-      <Grid container spacing={2}>
-        <Grid xs={8}>
+      <Grid container spacing={2} >
+        <Grid xs={8} sx={{ mb: '3'}}>
           <Item><AboutMe/></Item>
         </Grid>
         <Grid xs={4}>

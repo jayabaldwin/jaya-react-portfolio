@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/s
 import CssBaseline from '@mui/material/CssBaseline';
 import About from './components/home/About.jsx'
 import Intro from './components/home/Intro.jsx';
+import Skills from './components/home/Skills.jsx'
 
 // Completely rework color pallete 
 const theme = createTheme({
@@ -43,6 +44,7 @@ function App() {
         <Layout>
           <Intro />
           <About />
+          <Skills />
         </Layout>
         <Outlet />
       </main>
