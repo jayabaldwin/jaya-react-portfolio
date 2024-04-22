@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import './App.css'
 import CssBaseline from '@mui/material/CssBaseline';
-// import Home from './pages/Home.jsx'
 
 // Completely rework color pallete 
 const theme = createTheme({
@@ -39,8 +38,6 @@ function App(children) {
       <CssBaseline />
       <main>
         <Outlet />
-        {/* <Home /> */}
-          
       </main>
     </ThemeProvider>
     </>

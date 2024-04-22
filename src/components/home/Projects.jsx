@@ -29,7 +29,15 @@ export default function Projects() {
           {/* {projectCards.map((card, index) => (
             <ProjectCard />
           ))} */}
-          <ProjectCard />
+          <Item xs={4}>
+            <ProjectCard />
+          </Item>
+          <Item xs={4}>
+            <ProjectCard />
+          </Item>
+          <Item xs={4}>
+            <ProjectCard />
+          </Item>
         </Grid>
       </Grid>
   );
