@@ -1,6 +1,6 @@
 import './App.css'
 import { Outlet } from 'react-router-dom';
-import Layout from './components/layouts/Layout';
+// import Layout from './components/layouts/Layout';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Home from './pages/Home.jsx'
@@ -33,16 +33,15 @@ const theme = createTheme({
 });
 
 
-function App() {
+function App(children) {
   return (
     <>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <main>
-        <Layout>
-          <Home />
-        </Layout>
         <Outlet />
+        <Home />
+          
       </main>
     </ThemeProvider>
     </>
