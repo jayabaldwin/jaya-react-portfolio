@@ -15,6 +15,8 @@ const styles = {
     },
     connect: {
       display: 'flex',
+      cursor: 'pointer', // Add cursor pointer for better UX
+      alignItems: 'center', // Align icon vertically
     },
     arrow: {
       marginLeft: '5px'
@@ -22,19 +24,24 @@ const styles = {
 }
 
 export default function Intro() {
+  // Add in animation upon hover
+  const handleConnectClick = () => {
+    window.location.href = 'mailto:jayastarrbaldwin@gmail.com';
+  };
+
   return (
-      <Grid container spacing={2}>
-        <Grid xs={8}>
-          <Item
-            sx={{
-                textAlign: 'left'
-            }}>
-            <h2>Jaya Baldwin</h2>
-            <h1>Web +</h1>
-            <h1 style={styles.dev}>Developer</h1>
-            <h3 style={styles.connect}>Lets connect <ArrowCircleRightOutlinedIcon fontSize='medium' style={styles.arrow}  /></h3>
-          </Item>
-        </Grid>
+    <Grid container={true} id="home" spacing={2}>
+      <Grid xs={8}>
+        <Item sx={{ textAlign: 'left' }}>
+          <h2>Jaya Baldwin</h2>
+          <h1>Web +</h1>
+          <h1 style={styles.dev}>Developer</h1>
+          <h3 style={styles.connect} onClick={handleConnectClick}>
+            Let's connect 
+            <ArrowCircleRightOutlinedIcon fontSize='medium' style={styles.arrow} />
+          </h3>
+        </Item>
       </Grid>
-    );
+    </Grid>
+  );
 }

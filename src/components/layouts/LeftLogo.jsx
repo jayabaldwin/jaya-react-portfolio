@@ -3,7 +3,6 @@ import Fab from '@mui/material/Fab';
 import Grid from '@mui/material/Grid';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Nav from "./Nav";
-import { positions, style } from "@mui/system";
 
 const styles = {
   container: {

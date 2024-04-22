@@ -8,7 +8,6 @@ const Item = styled('div')(({ theme }) => ({
 
 const technologies = [
     'javascript', 
-    'jquery', 
     'nodejs', 
     'expressjs', 
     'react', 
@@ -23,7 +22,7 @@ const technologies = [
 
 export default function Gallery() {
     return (
-      <Grid container sx={{ justifyContent: 'center'}}>
+      <Grid container={true} sx={{ justifyContent: 'center'}}>
       {technologies.map((tech, index) => (
         <Item key={index} title={tech}>
           <img src={`src/assets/icons/${tech}.png`} alt={tech} 
@@ -36,43 +35,3 @@ export default function Gallery() {
     </Grid>
     );
   }
-
-
-// const technologies = [
-//     {
-//         image: 'javascript'
-//     },
-//     {
-//         image: 'jquery'
-//     },
-//     {
-//         image: 'nodejs'
-//     },
-//     {
-//         image: 'expressjs'
-//     },
-//     {
-//         image: 'react'
-//     },
-//     {
-//         image: 'materialUI'
-//     },
-//     {
-//         image: 'bootstrap'
-//     },
-//     {
-//         image: 'css3'
-//     },
-//     {
-//         image: 'mongoDB'
-//     },
-//     {
-//         image: 'mysql'
-//     },
-//     {
-//         image: 'sequelize'
-//     },
-//     {
-//         image: 'github'
-//     },
-// ]

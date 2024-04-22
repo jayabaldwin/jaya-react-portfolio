@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import Grow from '@mui/material/Grow';
 
 const styles = [
   {
@@ -40,11 +41,12 @@ const styles = [
 
 export default function ProjectCard() {
   return (
+    <Grow in={true}>
     <Card sx={{maxWidth: '345px', background: 'transparent', borderRadius: '12px',}} style={styles.card} elevation={5}>
       <CardMedia
         component="img"
         alt="elevate"
-        height="250"
+        height="200"
         image="/src/assets/gif/elevate.gif"
       />
       <CardContent style={styles.content}>
@@ -60,5 +62,6 @@ export default function ProjectCard() {
         <Button size="small" sx={{color: '#ffffff'}}><ArrowOutwardIcon/>View Site</Button>
       </CardActions>
     </Card>
+    </Grow>
   );
 }

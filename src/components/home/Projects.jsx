@@ -11,6 +11,7 @@ const Item = styled('div')(({ theme }) => ({
 function ProjectText() {
   return (
     <>
+    <h3>Portfolio</h3>
     <h2>Projects</h2>
     <p>Throughout the duration of this course I've built an array of applications, both solo and within a team. We were challenged with building primarily front-end, back-end and start-to-finish full-stack projects. </p>
   </>)
@@ -21,15 +22,23 @@ const projectCards = [{}];
 
 export default function Projects() {
   return (
-      <Grid container sx={{ display: 'column', mb: '5rem'}} spacing={2} >
+      <Grid container={true} id="projects"sx={{ display: 'column', mb: '5rem', justifyContent: 'space-around'}} spacing={2} >
         <Grid>
           <Item sx={{mb: '3rem'}}><ProjectText/></Item>
         </Grid>
-        <Grid container>
+        <Grid container={true} sx={{ justifyContent: 'center' }} spacing={2}>
           {/* {projectCards.map((card, index) => (
             <ProjectCard />
           ))} */}
-          <ProjectCard />
+          <Item xs={4}>
+            <ProjectCard />
+          </Item>
+          <Item xs={4}>
+            <ProjectCard />
+          </Item>
+          <Item xs={4}>
+            <ProjectCard />
+          </Item>
         </Grid>
       </Grid>
   );
