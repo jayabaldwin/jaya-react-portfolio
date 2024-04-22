@@ -1,7 +1,8 @@
 import React from 'react';
-import Box  from '@mui/system';
-import Link  from 'react-router-dom';
-import Contact from '../../pages/Contact'
+import { Box } from '@mui/system';
+import { Link } from 'react-router-dom'; // Correct import statement
+import Contact from '../../pages/Contact';
+import Scroll from '../../utils/Scroll';
 
 // Ensure directing to contact
 const navLinks = [
@@ -12,17 +13,7 @@ const navLinks = [
 ];
 
 export default function Nav() {
-  const handleClick = (event, anchor) => {
-    event.preventDefault();
-    const element = document.querySelector(anchor);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
+ 
   return (
     <Box sx={{
       rotate: '-90deg',
@@ -32,13 +23,14 @@ export default function Nav() {
       marginLeft: '30px'
     }}>
       {navLinks.map(({ label, anchor }, index) => (
-        <Link to={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }} onClick={(event) => handleClick(event, anchor)}>
+        <Link to={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }} onClick={(event) => Scroll(event, anchor)}>
           {label}
         </Link>
       ))}
     </Box>
   );
 }
+
 
 // import React from 'react';
 // import { Box } from '@mui/system';

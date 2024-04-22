@@ -2,7 +2,7 @@ import React from "react";
 import Fab from '@mui/material/Fab';
 import Grid from '@mui/material/Grid';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Nav from "./Nav";
+import Nav from "./Nav.jsx";
 
 const styles = {
   container: {
