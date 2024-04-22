@@ -4,7 +4,6 @@ import styled from '@mui/system/styled';
 
 const Item = styled('div')(({ theme }) => ({
   padding: theme.spacing(1),
-  align: 'center',
 }));
 
 const technologies = [
@@ -24,10 +23,14 @@ const technologies = [
 
 export default function Gallery() {
     return (
-      <Grid container>
+      <Grid container sx={{ justifyContent: 'center'}}>
       {technologies.map((tech, index) => (
         <Item key={index} title={tech}>
-          <img src={`src/assets/icons/${tech}.png`} alt={tech} style={{ width: '50px', marginTop: '1rem', marginRight: '1rem' }} />
+          <img src={`src/assets/icons/${tech}.png`} alt={tech} 
+          style=
+          {{ width: '55px', 
+             marginTop: '1rem', 
+             marginRight: '1rem' }} />
         </Item>
       ))}
     </Grid>
