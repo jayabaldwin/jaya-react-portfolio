@@ -6,6 +6,7 @@ import Gallery from '../home/Gallery.jsx'
 const Item = styled('div')(({ theme }) => ({
   background: 'transparent',
   padding: theme.spacing(1),
+  textAlign: 'center'
 }));
 
 function SkillsText() {
@@ -19,7 +20,7 @@ function SkillsText() {
 
 export default function Skills() {
   return (
-      <Grid container sx={{ display: 'column', mb: '5rem'}} spacing={2} >
+      <Grid container={true} sx={{ display: 'column', mb: '5rem', justifyContent: 'center'}} spacing={2} >
         <Grid>
           <Item><SkillsText/></Item>
         </Grid>

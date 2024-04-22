@@ -21,11 +21,11 @@ const projectCards = [{}];
 
 export default function Projects() {
   return (
-      <Grid container sx={{ display: 'column', mb: '5rem'}} spacing={2} >
+      <Grid container sx={{ display: 'column', mb: '5rem', justifyContent: 'center'}} spacing={2} >
         <Grid>
           <Item sx={{mb: '3rem'}}><ProjectText/></Item>
         </Grid>
-        <Grid container>
+        <Grid container={true} sx={{ justifyContent: 'center' }}>
           {/* {projectCards.map((card, index) => (
             <ProjectCard />
           ))} */}
