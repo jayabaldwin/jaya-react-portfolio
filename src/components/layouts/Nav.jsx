@@ -1,3 +1,44 @@
+import React from 'react';
+import { Box } from '@mui/system';
+
+const navLinks = [
+    { label: 'Home', anchor: '#home' },
+    { label: 'About', anchor: '#about' },
+    { label: 'Projects', anchor: '#projects' },
+    { label: 'Contact', anchor: '#contact' },
+];
+
+// Slow down transition
+export default function Nav() {
+  const handleClick = (event, anchor) => {
+    event.preventDefault();
+    const element = document.querySelector(anchor);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  return (
+    <Box sx={{
+      rotate: '-90deg',
+      transformOrigin: 'left',
+      position: 'fixed',
+      top: '32rem',
+      marginLeft: '30px'
+    }}>
+      {navLinks.map(({ label, anchor }, index) => (
+        <a href={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }} onClick={(event) => handleClick(event, anchor)}>
+          {label}
+        </a>
+      ))}
+    </Box>
+  );
+}
+
+
 // import * as React from 'react';
 // // import BottomNavigation from '@mui/material/BottomNavigation';
 // // import BottomNavigationAction from '@mui/material/BottomNavigationAction';
@@ -62,31 +103,3 @@
 //       ))};
 //     </Box> 
 // )}
-
-import React from 'react';
-import { Box } from '@mui/system';
-
-const navLinks = [
-    { label: 'Home', anchor: '#home' },
-    { label: 'About', anchor: '#about' },
-    { label: 'Projects', anchor: '#projects' },
-    { label: 'Contact', anchor: '#contact' },
-];
-
-export default function Nav() {
-  return (
-    <Box sx={{
-                  rotate: '-90deg',
-                  transformOrigin: 'left',
-                  position: 'fixed',
-                  top: '32rem',
-                  marginLeft: '30px'
-              }}>
-      {navLinks.map(({ label, anchor }, index) => (
-        <a href={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }}>
-          {label}
-        </a>
-      ))}
-    </Box>
-  );
-}
