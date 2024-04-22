@@ -1,11 +1,14 @@
 import React from 'react';
 import { Box } from '@mui/system';
+import { Link } from 'react-router-dom';
+import Contact from '../../pages/Contact'
 
+// Fix contact link, potentially change all to links and remove href
 const navLinks = [
     { label: 'Home', anchor: '#home' },
     { label: 'About', anchor: '#about' },
     { label: 'Projects', anchor: '#projects' },
-    { label: 'Contact', anchor: '#contact' },
+    { label: 'Contact', anchor: <Link to={Contact}/> },
 ];
 
 // Slow down transition
