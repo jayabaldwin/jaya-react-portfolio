@@ -23,7 +23,7 @@ const styles = {
 
 export default function Intro() {
   return (
-      <Grid container spacing={2}>
+      <Grid container={true} id="home" spacing={2}>
         <Grid xs={8}>
           <Item
             sx={{

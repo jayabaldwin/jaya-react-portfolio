@@ -11,17 +11,17 @@ const Item = styled(Box)(({ theme }) => ({
 
 export default function Layout({ children }) {
   return (
-      <Grid container spacing={2}>
+      <Grid container={true} spacing={2}>
         {/* Logo */}
-        <Grid item xs={2}>
+        <Grid item={true} xs={2}>
             <LeftLogo />
         </Grid>
         {/* Main content */}
-        <Grid item xs={8}>
+        <Grid item={true} xs={8}>
             {children}
         </Grid>
         {/* Socials sidebar */}
-        <Grid item xs={2}>
+        <Grid item={true} xs={2}>
           <RightSocial />
         </Grid>
       </Grid>
