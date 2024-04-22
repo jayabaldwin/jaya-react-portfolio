@@ -1,17 +1,16 @@
 import React from 'react';
-import { Box } from '@mui/system';
-import { Link } from 'react-router-dom';
+import Box  from '@mui/system';
+import Link  from 'react-router-dom';
 import Contact from '../../pages/Contact'
 
-// Fix contact link, potentially change all to links and remove href
+// Ensure directing to contact
 const navLinks = [
     { label: 'Home', anchor: '#home' },
     { label: 'About', anchor: '#about' },
     { label: 'Projects', anchor: '#projects' },
-    { label: 'Contact', anchor: <Link to={Contact}/> },
+    { label: 'Contact', anchor: '/contact' },
 ];
 
-// Slow down transition
 export default function Nav() {
   const handleClick = (event, anchor) => {
     event.preventDefault();
@@ -33,13 +32,56 @@ export default function Nav() {
       marginLeft: '30px'
     }}>
       {navLinks.map(({ label, anchor }, index) => (
-        <a href={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }} onClick={(event) => handleClick(event, anchor)}>
+        <Link to={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }} onClick={(event) => handleClick(event, anchor)}>
           {label}
-        </a>
+        </Link>
       ))}
     </Box>
   );
 }
+
+// import React from 'react';
+// import { Box } from '@mui/system';
+// import { Link } from 'react-router-dom';
+// import Contact from '../../pages/Contact'
+
+// // Fix contact link, potentially change all to links and remove href
+// const navLinks = [
+//     { label: 'Home', anchor: '#home' },
+//     { label: 'About', anchor: '#about' },
+//     { label: 'Projects', anchor: '#projects' },
+//     { label: 'Contact', anchor: <Link to={Contact}/> },
+// ];
+
+// // Slow down transition
+// export default function Nav() {
+//   const handleClick = (event, anchor) => {
+//     event.preventDefault();
+//     const element = document.querySelector(anchor);
+//     if (element) {
+//       element.scrollIntoView({
+//         behavior: 'smooth',
+//         block: 'start',
+//       });
+//     }
+//   };
+
+//   return (
+//     <Box sx={{
+//       rotate: '-90deg',
+//       transformOrigin: 'left',
+//       position: 'fixed',
+//       top: '32rem',
+//       marginLeft: '30px'
+//     }}>
+//       {navLinks.map(({ label, anchor }, index) => (
+//         <a href={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }} onClick={(event) => handleClick(event, anchor)}>
+//           {label}
+//         </a>
+//       ))}
+//     </Box>
+//   );
+// }
 
 
 // import * as React from 'react';

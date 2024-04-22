@@ -22,7 +22,7 @@ function AboutMe() {
 
 export default function About() {
   return (
-      <Grid container={true} id="about" spacing={2} sx={{ mb: '10rem'}}>
+      <Grid container={true} id="about" spacing={2} sx={{ mb: '1rem'}}>
         <Grid item={true} xs={8}>
           <Item><AboutMe/></Item>
         </Grid>
