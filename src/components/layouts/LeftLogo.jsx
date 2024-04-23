@@ -36,15 +36,15 @@ export default function LeftLogo() {
       {/* Nav */}
       <Navigation style={styles.nav}/>
       {/* Return to top icon */}
-      <Fab 
+      <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+        <Fab 
         color="primary" 
         aria-label="up"
         style={styles.up}
         >
-         <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
-            <KeyboardArrowUpIcon />
-         </ScrollLink>
-      </Fab>
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollLink>
     </Grid>
   );
 }

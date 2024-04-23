@@ -16,10 +16,10 @@ const styles = {
     marginTop: '1.5rem',
     width: '60vh'
   },
-  contactFrame: {
-    background: 'transparent',
-    border: '#ffffff'
-  }
+  // contactFrame: {
+  //   background: 'white',
+  //   border: '#ffffff'
+  // }
 };
 
 const ContactForm = () => {
@@ -89,6 +89,7 @@ const ContactForm = () => {
                 name="userName"
                 onChange={handleChange("userName")}
                 margin="normal"
+                color='primary'
               />
             </Grid>
             <Grid item>
