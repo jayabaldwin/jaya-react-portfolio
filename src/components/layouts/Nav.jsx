@@ -1,58 +1,142 @@
-import { Box } from '@mui/system';
-import { Link as ScrollLink } from 'react-scroll';
-import { Link } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
+import React from "react";
+import { NavLink as RouterLink, useLocation, useNavigate } from "react-router-dom";
 
-const navLinks = [
-    { label: 'Home', anchor: 'home' },
-    { label: 'About', anchor: 'about' },
-    { label: 'Projects', anchor: 'projects' },
-];
+import { Link as ScrollLink } from "react-scroll";
+import * as Scroll from "react-scroll";
 
-export default function Nav() {
-  const location = useLocation();
-  location.pathname === '/Contact'
+const Navigation = () => {
+  const path = useLocation().pathname;
+  const location = path.split("/")[1];
+  const navigate = useNavigate();
+  const scroller = Scroll.scroller;
+
+  const goToPageAndScroll = async (selector) => {
+    await navigate("/");
+    await scroller.scrollTo(selector, {
+      duration: 500,
+      smooth: true,
+      offset: -75,
+      spy: true
+    });
+  };
+
   return (
-    <Box
-      sx={{
-        rotate: '-90deg',
-        transformOrigin: 'left',
-        position: 'fixed',
-        top: '32rem',
-        marginLeft: '30px',
-      }}
-    >
-      {navLinks.map(({ label, anchor }, index) => (
-        <ScrollLink
-          to={anchor}
-          smooth={true}
-          duration={700}
-          key={index}
-          style={{
-            color: '#ffffff',
-            fontSize: '1rem',
-            marginRight: '20px',
-            textDecoration: 'none',
-            cursor: 'pointer',
-          }}
-        >
-          {label}
-        </ScrollLink>
-      ))}
-      <Link 
-        to="/contact"
+      <nav id="navigation">
+        <ul  
         style={{
-          color: '#ffffff',
-          fontSize: '1rem',
-          marginRight: '20px',
-          textDecoration: 'none',
-          cursor: 'pointer',
-        }}>
-        Contact
-      </Link>
-    </Box>
+          display: 'flex',
+          rotate: '-90deg',
+          transformOrigin: 'left',
+          position: 'fixed',
+          top: '32rem',
+          marginLeft: '30px',
+          }}>
+          {location !== "Contact" ? (
+            <>
+              <li>
+                {" "}
+                <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+                  Home
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="about" spy={true} smooth={true} offset={-75} duration={500}>
+                  About
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="projects" spy={true} smooth={true} offset={-75} duration={500}>
+                  Projects
+                </ScrollLink>
+              </li>
+              <li>
+                <RouterLink to="/Contact">Contact</RouterLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                {" "}
+                <button onClick={() => goToPageAndScroll("home")}>Home</button>
+              </li>
+              <li>
+                <button onClick={() => goToPageAndScroll("about")}>About</button>
+              </li>
+              <li>
+                <button onClick={() => goToPageAndScroll("projects")}>Projects</button>
+              </li>
+              <li>
+                <RouterLink to="/Contact">Contact</RouterLink>
+              </li>
+            </>
+          )}
+        </ul>
+      </nav>
   );
-}
+};
+
+export default Navigation;
+
+
+
+// import { Box } from '@mui/system';
+// import { Link as ScrollLink } from 'react-scroll';
+// import { Link } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
+
+// const navLinks = [
+//     { label: 'Home', anchor: 'home' },
+//     { label: 'About', anchor: 'about' },
+//     { label: 'Projects', anchor: 'projects' },
+// ];
+
+// export default function Nav() {
+//   const location = useLocation();
+//   location.pathname === '/Contact'
+//   return (
+//     <Box
+//       sx={{
+        // rotate: '-90deg',
+        // transformOrigin: 'left',
+        // position: 'fixed',
+        // top: '32rem',
+        // marginLeft: '30px',
+//       }}
+//     >
+//       {navLinks.map(({ label, anchor }, index) => (
+//         <ScrollLink
+//           to={anchor}
+//           smooth={true}
+//           duration={700}
+//           key={index}
+//           style={{
+//             color: '#ffffff',
+//             fontSize: '1rem',
+//             marginRight: '20px',
+//             textDecoration: 'none',
+//             cursor: 'pointer',
+//           }}
+//         >
+//           {label}
+//         </ScrollLink>
+//       ))}
+//       <Link 
+//         to="/contact"
+//         style={{
+//           color: '#ffffff',
+//           fontSize: '1rem',
+//           marginRight: '20px',
+//           textDecoration: 'none',
+//           cursor: 'pointer',
+//         }}>
+//         Contact
+//       </Link>
+//     </Box>
+//   );
+// }
+
+
+
 // import React from 'react';
 // import { Box } from '@mui/system';
 // import { Link } from 'react-router-dom'; // Correct import statement

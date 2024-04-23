@@ -1,6 +1,8 @@
 import Grid from '@mui/system/Unstable_Grid';
 import styled from '@mui/system/styled';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import Lottie from 'lottie-react'
+import animationData from '../../utils/rightArrowAnimate.json'
 
 const Item = styled('div')(() => ({
   backgroundColor: 'transparent',
@@ -18,7 +20,7 @@ const styles = {
       alignItems: 'center',
     },
     arrow: {
-      marginLeft: '5px'
+      width: '50px'
     }
 }
 
@@ -36,7 +38,8 @@ export default function Intro() {
           <h1 style={styles.dev}>Developer</h1>
           <h3 style={styles.connect} onClick={handleConnectClick}>
             Let's connect 
-            <ArrowCircleRightOutlinedIcon fontSize='medium' style={styles.arrow} />
+            {/* <ArrowCircleRightOutlinedIcon fontSize='medium' style={styles.arrow} /> */}
+            <Lottie animationData={animationData} style={styles.arrow}/>
           </h3>
         </Item>
       </Grid>
