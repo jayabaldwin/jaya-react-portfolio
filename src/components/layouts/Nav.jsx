@@ -1,44 +1,100 @@
-import React from 'react';
-import Box  from '@mui/system';
-import Link  from 'react-router-dom';
-import Contact from '../../pages/Contact'
+import { Box } from '@mui/system';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
-// Ensure directing to contact
 const navLinks = [
-    { label: 'Home', anchor: '#home' },
-    { label: 'About', anchor: '#about' },
-    { label: 'Projects', anchor: '#projects' },
-    { label: 'Contact', anchor: '/contact' },
+    { label: 'Home', anchor: 'home' },
+    { label: 'About', anchor: 'about' },
+    { label: 'Projects', anchor: 'projects' },
 ];
 
 export default function Nav() {
-  const handleClick = (event, anchor) => {
-    event.preventDefault();
-    const element = document.querySelector(anchor);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
+  const location = useLocation();
+  location.pathname === '/Contact'
   return (
-    <Box sx={{
-      rotate: '-90deg',
-      transformOrigin: 'left',
-      position: 'fixed',
-      top: '32rem',
-      marginLeft: '30px'
-    }}>
+    <Box
+      sx={{
+        rotate: '-90deg',
+        transformOrigin: 'left',
+        position: 'fixed',
+        top: '32rem',
+        marginLeft: '30px',
+      }}
+    >
       {navLinks.map(({ label, anchor }, index) => (
-        <Link to={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }} onClick={(event) => handleClick(event, anchor)}>
+        <ScrollLink
+          to={anchor}
+          smooth={true}
+          duration={700}
+          key={index}
+          style={{
+            color: '#ffffff',
+            fontSize: '1rem',
+            marginRight: '20px',
+            textDecoration: 'none',
+            cursor: 'pointer',
+          }}
+        >
           {label}
-        </Link>
+        </ScrollLink>
       ))}
+      <Link 
+        to="/contact"
+        style={{
+          color: '#ffffff',
+          fontSize: '1rem',
+          marginRight: '20px',
+          textDecoration: 'none',
+          cursor: 'pointer',
+        }}>
+        Contact
+      </Link>
     </Box>
   );
 }
+// import React from 'react';
+// import { Box } from '@mui/system';
+// import { Link } from 'react-router-dom'; // Correct import statement
+// import Contact from '../../pages/Contact';
+
+// // Ensure directing to contact
+// const navLinks = [
+//     { label: 'Home', anchor: '#home' },
+//     { label: 'About', anchor: '#about' },
+//     { label: 'Projects', anchor: '#projects' },
+//     { label: 'Contact', anchor: '/contact' },
+// ];
+
+// export default function Nav() {
+//   const handleClick = (event, anchor) => {
+//     event.preventDefault();
+//     const element = document.querySelector(anchor);
+//     if (element) {
+//       element.scrollIntoView({
+//         behavior: 'smooth',
+//         block: 'start',
+//       });
+//     }
+//   };
+
+//   return (
+//     <Box sx={{
+//       rotate: '-90deg',
+//       transformOrigin: 'left',
+//       position: 'fixed',
+//       top: '32rem',
+//       marginLeft: '30px'
+//     }}>
+//       {navLinks.map(({ label, anchor }, index) => (
+//         <Link to={anchor} key={index} style={{ color: '#ffffff', fontSize: '1rem', marginRight: '20px', textDecoration: 'none' }} onClick={(event) => handleClick(event, anchor)}>
+//           {label}
+//         </Link>
+//       ))}
+//     </Box>
+//   );
+// }
+
 
 // import React from 'react';
 // import { Box } from '@mui/system';

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Grow from '@mui/material/Grow';
 import ProjectCard from './ProjectCard.jsx';
 

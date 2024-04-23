@@ -1,8 +1,8 @@
-import React from "react";
 import Fab from '@mui/material/Fab';
 import Grid from '@mui/material/Grid';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Nav from "./Nav";
+import Nav from "./Nav.jsx";
+import { Link as ScrollLink } from 'react-scroll';
 
 const styles = {
   container: {
@@ -41,7 +41,13 @@ export default function LeftLogo() {
         aria-label="up"
         style={styles.up}
         >
-        <KeyboardArrowUpIcon />
+          <ScrollLink
+          to="#home"
+          smooth={true}
+          duration={700}
+        >
+          <KeyboardArrowUpIcon />
+        </ScrollLink>
       </Fab>
     </Grid>
   );

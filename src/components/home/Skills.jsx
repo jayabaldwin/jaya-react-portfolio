@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Grid from '@mui/system/Unstable_Grid';
 import styled from '@mui/system/styled';
 import Gallery from '../home/Gallery.jsx'

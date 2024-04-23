@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Grid from '@mui/system/Unstable_Grid';
 import styled from '@mui/system/styled';
 
@@ -23,10 +22,10 @@ function AboutMe() {
 export default function About() {
   return (
       <Grid container={true} id="about" spacing={2} sx={{ mb: '1rem'}}>
-        <Grid item={true} xs={8}>
+        <Grid item="true" xs={8}>
           <Item><AboutMe/></Item>
         </Grid>
-        <Grid item={true} xs={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Grid item="true" xs={4} sx={{ display: 'flex', justifyContent: 'center' }}>
           <Item>
             <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '240px', marginTop: '3rem' }} />
           </Item>

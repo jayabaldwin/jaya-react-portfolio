@@ -1,4 +1,3 @@
-import React from "react";
 import Fab from '@mui/material/Fab';
 import Box from '@mui/material/Box';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -6,7 +5,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LayersIcon from '@mui/icons-material/Layers';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import SendIcon from '@mui/icons-material/Send';
-// import Tooltip from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 

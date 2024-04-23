@@ -1,4 +1,3 @@
-import React from 'react';
 import LeftLogo from "./LeftLogo.jsx"
 import RightSocial from "./RightSocial.jsx"
 import { styled } from '@mui/material/styles';

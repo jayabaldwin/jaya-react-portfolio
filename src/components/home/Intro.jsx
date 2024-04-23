@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Grid from '@mui/system/Unstable_Grid';
 import styled from '@mui/system/styled';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
@@ -15,8 +14,8 @@ const styles = {
     },
     connect: {
       display: 'flex',
-      cursor: 'pointer', // Add cursor pointer for better UX
-      alignItems: 'center', // Align icon vertically
+      cursor: 'pointer',
+      alignItems: 'center',
     },
     arrow: {
       marginLeft: '5px'
@@ -24,7 +23,6 @@ const styles = {
 }
 
 export default function Intro() {
-  // Add in animation upon hover
   const handleConnectClick = () => {
     window.location.href = 'mailto:jayastarrbaldwin@gmail.com';
   };
