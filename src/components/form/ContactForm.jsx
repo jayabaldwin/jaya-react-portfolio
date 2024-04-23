@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -14,6 +15,10 @@ const styles = {
   contactForm: {
     marginTop: '1.5rem',
     width: '60vh'
+  },
+  contactFrame: {
+    background: 'transparent',
+    border: '#ffffff'
   }
 };
 
@@ -62,9 +67,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
-      <CssBaseline />
-      <Typography variant="h4" align="center" component="h1" sx={{marginTop: '6rem'}} gutterBottom>
+    // <div>
+    <Box>
+    <CssBaseline />
+      <Typography variant="h4" align="center" component="h1" sx={{marginTop: '3rem'}} gutterBottom>
         {'Contact Form'.toUpperCase()}
       </Typography>
       <Grid container direction="column" justify="center" alignItems="center">
@@ -132,7 +138,7 @@ const ContactForm = () => {
           </form>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 };
 

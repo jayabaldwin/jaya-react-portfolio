@@ -41,13 +41,9 @@ export default function LeftLogo() {
         aria-label="up"
         style={styles.up}
         >
-          <ScrollLink
-          to="#home"
-          smooth={true}
-          duration={700}
-        >
-          <KeyboardArrowUpIcon />
-        </ScrollLink>
+         <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+            <KeyboardArrowUpIcon />
+         </ScrollLink>
       </Fab>
     </Grid>
   );
