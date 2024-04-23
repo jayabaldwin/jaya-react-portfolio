@@ -1,15 +1,17 @@
-import React from 'react';
 import { Box } from '@mui/system';
 import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const navLinks = [
     { label: 'Home', anchor: 'home' },
     { label: 'About', anchor: 'about' },
     { label: 'Projects', anchor: 'projects' },
-    { label: 'Contact', anchor: 'contact' },
 ];
 
 export default function Nav() {
+  const location = useLocation();
+  location.pathname === '/Contact'
   return (
     <Box
       sx={{
@@ -37,6 +39,17 @@ export default function Nav() {
           {label}
         </ScrollLink>
       ))}
+      <Link 
+        to="/contact"
+        style={{
+          color: '#ffffff',
+          fontSize: '1rem',
+          marginRight: '20px',
+          textDecoration: 'none',
+          cursor: 'pointer',
+        }}>
+        Contact
+      </Link>
     </Box>
   );
 }
