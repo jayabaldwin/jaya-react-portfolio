@@ -1,8 +1,13 @@
+import { Button } from "@mui/material";
 import React from "react";
 import { NavLink as RouterLink, useLocation, useNavigate } from "react-router-dom";
 
 import { Link as ScrollLink } from "react-scroll";
 import * as Scroll from "react-scroll";
+
+const styles = {
+
+}
 
 const Navigation = () => {
   const path = useLocation().pathname;
@@ -28,45 +33,55 @@ const Navigation = () => {
           rotate: '-90deg',
           transformOrigin: 'left',
           position: 'fixed',
-          top: '32rem',
-          marginLeft: '30px',
+          top: '36.5rem',
+          marginLeft: '20px',
           }}>
           {location !== "Contact" ? (
             <>
               <li>
                 {" "}
-                <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
-                  Home
-                </ScrollLink>
+                <Button color="white">
+                  <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+                    Home
+                  </ScrollLink>
+                </Button>
               </li>
               <li>
-                <ScrollLink to="about" spy={true} smooth={true} offset={-75} duration={500}>
-                  About
-                </ScrollLink>
+                <Button color="white">
+                  <ScrollLink to="about" spy={true} smooth={true} offset={-75} duration={500}>
+                    About
+                  </ScrollLink>
+                </Button>
               </li>
               <li>
+              <Button color="white">
                 <ScrollLink to="projects" spy={true} smooth={true} offset={-75} duration={500}>
                   Projects
                 </ScrollLink>
+              </Button>
               </li>
               <li>
-                <RouterLink to="/Contact">Contact</RouterLink>
+              <Button color="white">
+                <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
+              </Button>
               </li>
             </>
           ) : (
             <>
               <li>
                 {" "}
-                <button onClick={() => goToPageAndScroll("home")}>Home</button>
+                <Button color="white" onClick={() => goToPageAndScroll("home")}>Home</Button>
               </li>
               <li>
-                <button onClick={() => goToPageAndScroll("about")}>About</button>
+                <Button color="white" onClick={() => goToPageAndScroll("about")}>About</Button>
               </li>
               <li>
-                <button onClick={() => goToPageAndScroll("projects")}>Projects</button>
+                <Button color="white" onClick={() => goToPageAndScroll("projects")}>Projects</Button>
               </li>
               <li>
-                <RouterLink to="/Contact">Contact</RouterLink>
+                <Button color="white">
+                  <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
+                </Button>
               </li>
             </>
           )}
