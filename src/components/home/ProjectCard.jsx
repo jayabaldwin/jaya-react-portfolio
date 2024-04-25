@@ -9,10 +9,11 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 const styles = {
   card: {
-    maxWidth: '345px',
-    minWidth: '345px',
+    // maxWidth: '345px',
+    // minWidth: '345px',
     background: 'transparent',
-    borderRadius: '12px'
+    borderRadius: '12px',
+    margin: '10px'
   },
 };
 
@@ -22,7 +23,7 @@ export default function ProjectCard({ img, title, subtitle, github, website }) {
       { img && <CardMedia
         component="img"
         alt={img}
-        height="200"
+        height="250"
         image={`/src/assets/images/${img}.png`}
       /> }
       <CardContent>

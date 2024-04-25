@@ -4,9 +4,9 @@ import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 
-const Item = styled(Box)(({ theme }) => ({
-  textAlign: 'center',
-}));
+// const Item = styled(Box)(({ theme }) => ({
+//   textAlign: 'center',
+// }));
 
 export default function Layout({ children }) {
   return (
@@ -16,7 +16,7 @@ export default function Layout({ children }) {
             <LeftLogo />
         </Grid>
         {/* Main content */}
-        <Grid item={true} xs={8}>
+        <Grid item={true} xs={8} sx={{marginLeft: '12px'}}>
             {children}
         </Grid>
         {/* Socials sidebar */}
