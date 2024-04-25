@@ -16,7 +16,7 @@ const styles = {
   },
 };
 
-export default function ProjectCard({ img, title, subtitle, github, website }) {
+export default function ProjectCard({ img, title, subtitle, github, website, chips }) {
   return (
     <Card style={styles.card} elevation={5}>
       { img && <CardMedia
@@ -26,8 +26,12 @@ export default function ProjectCard({ img, title, subtitle, github, website }) {
         image={`/src/assets/images/${img}.png`}
       /> }
       <CardContent>
+          <div>
+          {chips.map((chip, index) => (
+              <Chip key={index} label={chip} style={{ marginRight: '0.02rem', marginBottom: '0.5rem' }} />
+            ))}
+          </div>
         <Typography gutterBottom variant="h5" component="div" sx={{ color: '#ffffff' }}>{title}</Typography>
-        <Chip label="Small" size="small" />        
         <Typography variant="body2">{subtitle}</Typography>
       </CardContent>
       <CardActions>
