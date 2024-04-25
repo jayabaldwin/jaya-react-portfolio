@@ -36,6 +36,7 @@ export default function LeftLogo() {
       {/* Nav */}
       <Navigation style={styles.nav}/>
       {/* Return to top icon */}
+      
       <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
         <Fab 
         color="primary" 
