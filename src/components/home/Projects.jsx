@@ -1,6 +1,7 @@
 import Grid from '@mui/material/Grid';
 import styled from '@mui/system/styled';
 import ProjectCard from '../home/ProjectCard.jsx';
+import { Grow } from '@mui/material';
 
 const Item = styled('div')(({ theme }) => ({
   // background: 'transparent',
@@ -79,11 +80,13 @@ export default function Projects() {
         <Item><ProjectText/></Item>
       </Grid>
       {projectData.map((project, index) => (
-        <Grid key={index} item sm={12} md={12} lg={6} xl={4}>
-          <Item>
-            <ProjectCard {...project}/>
-          </Item>
-        </Grid>
+        <Grow key={index} in={true} timeout={1500 * index}>
+          <Grid key={index} item sm={12} md={12} lg={6} xl={4}>
+            {/* <Item> */}
+              <ProjectCard {...project}/>
+            {/* </Item> */}
+          </Grid>
+          </Grow>
       ))}
     </Grid>
   );

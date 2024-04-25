@@ -6,14 +6,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import Chip from '@mui/material/Chip';
 
 const styles = {
   card: {
-    // maxWidth: '345px',
-    // minWidth: '345px',
     background: 'transparent',
     borderRadius: '12px',
-    margin: '10px'
+    // margin: '10px'
   },
 };
 
@@ -23,17 +22,18 @@ export default function ProjectCard({ img, title, subtitle, github, website }) {
       { img && <CardMedia
         component="img"
         alt={img}
-        height="250"
+        height="180px"
         image={`/src/assets/images/${img}.png`}
       /> }
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{ color: '#ffffff' }}>{title}</Typography>
+        <Chip label="Small" size="small" />        
         <Typography variant="body2">{subtitle}</Typography>
       </CardContent>
       <CardActions>
         <Button
           size="small"
-          sx={{ color: '#ffffff' }}
+          sx={{ color: '#ffffff', justifyContent: 'flex-end' }}
           aria-label="github repository"
           href={github}
           target="_blank"
@@ -44,7 +44,7 @@ export default function ProjectCard({ img, title, subtitle, github, website }) {
         {website && (
           <Button
             size="small"
-            sx={{ color: '#ffffff' }}
+            sx={{ color: '#ffffff', justifyContent: 'flex-end' }}
             aria-label="active web application"
             href={website}
             target="_blank"
