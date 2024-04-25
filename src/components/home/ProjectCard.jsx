@@ -6,60 +6,83 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-import Grow from '@mui/material/Grow';
+import Chip from '@mui/material/Chip';
+import { display, padding, positions, width } from '@mui/system';
+import { Opacity } from '@mui/icons-material';
 
-const styles = [
-  {
-    image: {}
+const styles = {
+  card: {
+    background: 'transparent',
+    borderRadius: '12px',
   },
-  {
-    card: {
-      maxWidth: '400px',
-    }
-  },
-  {
-    content: {
-      maxWidth: '400px',
-      background: 'transparent'
-    }
-  },
-  {
-    text: {}
-  },
-  {
-    buttons: {}
-  },
-  {
-    float: {}
-  },
-  {
-    text: {}
-  },
-]
+  image: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    opacity: '1'
 
-export default function ProjectCard() {
+  },
+  // hover: {
+  //   // position: 'absolute',
+  //   background: '#1f3d4738',
+  //   backdropFilter: 'blue(5px)'
+
+  // },
+  icons: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: '5px'
+  }
+};
+
+export default function ProjectCard({ img, title, subtitle, github, website, chips }) {
   return (
-    <Grow in={true}>
-    <Card sx={{maxWidth: '345px', background: 'transparent', borderRadius: '12px',}} style={styles.card} elevation={5}>
-      <CardMedia
+    <Card style={styles.card} elevation={5}>
+      <div style={styles.icons}> 
+      <Button
+          size="small"
+          sx={{ color: '#ffffff'}}
+          aria-label="github repository"
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHubIcon />
+        </Button>
+        {website && (
+          <Button
+            size="small"
+            sx={{ color: '#ffffff' }}
+            aria-label="active web application"
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ArrowOutwardIcon />View Site
+          </Button>
+       )}
+
+      </div>
+      <div style={styles.hover}>
+      { img && <CardMedia
+        style={styles.image}
         component="img"
-        alt="elevate"
-        height="200"
-        image="/src/assets/gif/elevate.gif"
-      />
-      <CardContent style={styles.content}>
-        <Typography gutterBottom variant="h5" component="div" sx={{color: '#ffffff'}}>
-          Elevate
-        </Typography>
-        <Typography variant="body2">
-          Enhanced task management software for your company
-        </Typography>
+        alt={img}
+        image={`/src/assets/images/${img}.png`}
+      /> }
+      </div>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" sx={{ color: '#ffffff' }}>{title}</Typography>
+        <Typography variant="body2">{subtitle}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" sx={{color: '#ffffff'}}><GitHubIcon/></Button>
-        <Button size="small" sx={{color: '#ffffff'}}><ArrowOutwardIcon/>View Site</Button>
+      <div>
+          {chips.map((chip, index) => (
+              <Chip key={index} label={chip} style={{ marginRight: '0.02rem', marginBottom: '0.5rem', color: '#ffffff' }} />
+            ))}
+          </div>
       </CardActions>
     </Card>
-    </Grow>
   );
 }

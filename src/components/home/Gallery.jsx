@@ -26,7 +26,7 @@ export default function Gallery() {
         <Item key={index} title={tech}>
           <img src={`src/assets/icons/${tech}.png`} alt={tech} 
           style=
-          {{ width: '55px', 
+          {{ width: '50px', 
              marginTop: '1rem', 
              marginRight: '1rem' }} />
         </Item>

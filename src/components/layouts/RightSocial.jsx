@@ -11,7 +11,7 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 const socialIcons = [
   { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com/jayabaldwin' },
   { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/jaya-baldwin-489122204/' },
-  { icon: <LayersIcon />, label: 'Stack Overflow', href: 'https://stackoverflow.com/users/16069392/jaya-baldwin' },
+  { icon: <LayersIcon />, label: 'Stack Overflow', href: 'https://stackoverflow.com/users/22643123/jayabaldwin?tab=profile' },
   { icon: <SendIcon />, label: 'Email', href: `mailto:jayastarrbaldwin@gmail.com` },
   { icon: <SaveAltIcon />, label: 'Resumé', href: '#' }, // Add resume file download link
 ];
