@@ -43,3 +43,12 @@ body {
     background-position: 0% 50%;
   }
 }
+
+li {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-right: 20px;
+  text-decoration: none;
+  list-style-type: none;
+  cursor: pointer;
+}

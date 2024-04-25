@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import './App.css'
 import CssBaseline from '@mui/material/CssBaseline';
+import TrackVisibility from 'react-on-screen';
 
 // Completely rework color pallete 
 const theme = createTheme({
@@ -31,14 +32,16 @@ const theme = createTheme({
 });
 
 
-function App(children) {
+function App() {
   return (
     <>
     <ThemeProvider theme={theme}>
+      <TrackVisibility>
       <CssBaseline />
       <main>
         <Outlet />
       </main>
+      </TrackVisibility>
     </ThemeProvider>
     </>
   );

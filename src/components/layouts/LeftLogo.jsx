@@ -1,7 +1,7 @@
 import Fab from '@mui/material/Fab';
 import Grid from '@mui/material/Grid';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Nav from "./Nav.jsx";
+import Navigation from "./Nav.jsx";
 import { Link as ScrollLink } from 'react-scroll';
 
 const styles = {
@@ -34,21 +34,17 @@ export default function LeftLogo() {
       {/* Logo */}
       <img src="src/assets/images/jaya-logo.png" alt="Logo" style={styles.logo} />
       {/* Nav */}
-      <Nav style={styles.nav}/>
+      <Navigation style={styles.nav}/>
       {/* Return to top icon */}
-      <Fab 
+      <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+        <Fab 
         color="primary" 
         aria-label="up"
         style={styles.up}
         >
-          <ScrollLink
-          to="#home"
-          smooth={true}
-          duration={700}
-        >
           <KeyboardArrowUpIcon />
-        </ScrollLink>
-      </Fab>
+        </Fab>
+      </ScrollLink>
     </Grid>
   );
 }
