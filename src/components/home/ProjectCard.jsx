@@ -10,6 +10,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 const styles = {
   card: {
     maxWidth: '345px',
+    minWidth: '345px',
     background: 'transparent',
     borderRadius: '12px'
   },
@@ -18,12 +19,12 @@ const styles = {
 export default function ProjectCard({ img, title, subtitle, github, website }) {
   return (
     <Card style={styles.card} elevation={5}>
-      <CardMedia
+      { img && <CardMedia
         component="img"
         alt={img}
         height="200"
         image={`/src/assets/images/${img}.png`}
-      />
+      /> }
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{ color: '#ffffff' }}>{title}</Typography>
         <Typography variant="body2">{subtitle}</Typography>
@@ -39,16 +40,18 @@ export default function ProjectCard({ img, title, subtitle, github, website }) {
         >
           <GitHubIcon />
         </Button>
-        <Button
-          size="small"
-          sx={{ color: '#ffffff' }}
-          aria-label="active web application"
-          href={website}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <ArrowOutwardIcon />View Site
-        </Button>
+        {website && (
+          <Button
+            size="small"
+            sx={{ color: '#ffffff' }}
+            aria-label="active web application"
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ArrowOutwardIcon />View Site
+          </Button>
+        )}
       </CardActions>
     </Card>
   );
