@@ -22,7 +22,7 @@ const projectData = [
   {
     img: 'portfolio', 
     title: 'Portfolio', 
-    subtitle: 'Personal web dev folder build with React', 
+    subtitle: 'Personal web dev folder built with React', 
     github: 'https://github.com/jayabaldwin/jaya-react-portfolio', 
     website: 'www.jayabaldwin.com',
     chips: ['React.js', 'Node.js', 'Material UI']
@@ -83,18 +83,16 @@ const projectData = [
 
 export default function Projects() {
   return (
-    <Grid container id="projects" spacing={2} justifyContent="center" sx={{ flexWrap: 'wrap' }}>
+    <Grid container id="projects" spacing={4} justifyContent="center" sx={{ flexWrap: 'wrap' }}>
       <Grid item xs={12}>
         <Item><ProjectText/></Item>
       </Grid>
       {projectData.map((project, index) => (
         <Grow key={index} in={true} timeout={1500 * index}>
           <Grid key={index} item sm={12} md={12} lg={6} xl={4}>
-            {/* <Item> */}
               <ProjectCard {...project}/>
-            {/* </Item> */}
           </Grid>
-          </Grow>
+          </Grow> 
       ))}
     </Grid>
   );
