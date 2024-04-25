@@ -3,6 +3,8 @@ import Grid from '@mui/material/Grid';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Navigation from "./Nav.jsx";
 import { Link as ScrollLink } from 'react-scroll';
+import { useLocation } from "react-router-dom";
+
 
 const styles = {
   container: {
@@ -25,6 +27,9 @@ const styles = {
 }
 
 export default function LeftLogo() {
+  const path = useLocation().pathname;
+  const location = path.split("/")[1];
+
   return (
     <Grid
       container
@@ -36,15 +41,17 @@ export default function LeftLogo() {
       {/* Nav */}
       <Navigation style={styles.nav}/>
       {/* Return to top icon */}
-      <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
-        <Fab 
-        color="primary" 
-        aria-label="up"
-        style={styles.up}
-        >
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollLink>
+      {location !== "Contact" ? (
+        <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+          <Fab 
+          color="primary" 
+          aria-label="up"
+          style={styles.up}
+          >
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollLink>) : 
+        ('')}
     </Grid>
   );
 }
