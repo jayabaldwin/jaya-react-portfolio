@@ -153,7 +153,7 @@ const ContactForm = () => {
         <Alert
           onClose={handleClose}
           severity={notificationSeverity}
-          variant="filled"
+          // variant="filled"
           sx={{ width: '100%' }}
         >
           {notificationMessage}

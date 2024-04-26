@@ -7,6 +7,14 @@ const Item = styled('div')(({ theme }) => ({
   textAlign: 'left',
 }));
 
+// const styles = (theme) => ({
+//     about: {
+//       [theme.breakpoints.only("xs")]: {
+//       flexDirection: 'column-reverse'
+//     }
+//   }
+// })
+
 function AboutMe() {
   return (
     <>
@@ -21,13 +29,18 @@ function AboutMe() {
 
 export default function About() {
   return (
-      <Grid container={true} id="about" spacing={2} sx={{ mb: '1rem'}}>
-        <Grid item="true" xs={12} md={8}> 
+      <Grid container={true} id="about" spacing={2} 
+        sx={(theme) => ({
+        [theme.breakpoints.only("xs")]: {
+          flexDirection: 'column-reverse'
+        }
+      })}>
+        <Grid item="true" xs={12} sm={7} md={8}> 
           <Item><AboutMe/></Item>
         </Grid>
-        <Grid item="true" xs={12} md={12} sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Grid item="true" xs={12} sm={5} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Item>
-            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '240px', marginTop: '3rem' }} />
+            <img src="src/assets/images/profile-image.png" alt="Profile Image" style={{ width: '240px' }} />
           </Item>
         </Grid>
       </Grid>

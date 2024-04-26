@@ -89,7 +89,7 @@ export default function Projects() {
       </Grid>
       {projectData.map((project, index) => (
         <Grow key={index} in={true} timeout={1500 * index}>
-          <Grid key={index} item sm={12} md={12} lg={6} xl={4}>
+          <Grid key={index} item xs={12} sm={6} md={6} lg={6} xl={4}>
               <ProjectCard {...project}/>
           </Grid>
           </Grow> 

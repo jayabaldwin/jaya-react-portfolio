@@ -16,7 +16,7 @@ export default function Layout({ children }) {
             <LeftLogo />
         </Grid>
         {/* Main content */}
-        <Grid item={true} xs={12} sm={10 }md={8} sx={{marginLeft: '12px'}}>
+        <Grid item={true} xs={12} sm={10} md={8} sx={{marginLeft: '12px'}}>
             {children}
         </Grid>
         {/* Socials sidebar */}
