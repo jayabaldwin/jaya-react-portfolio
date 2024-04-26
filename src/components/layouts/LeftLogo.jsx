@@ -40,7 +40,7 @@ export default function LeftLogo() {
       <img src="src/assets/images/jaya-logo.png" alt="Logo" style={styles.logo} />
       {/* Nav */}
       <Navigation style={styles.nav}/>
-      {/* Return to top icon */}
+      {/* Return to top icon if not on contact page */}
       {location !== "Contact" ? (
         <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
           <Fab 

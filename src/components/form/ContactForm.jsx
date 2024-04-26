@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-import { width } from '@mui/system';
 
 
 const styles = {
@@ -120,7 +119,7 @@ const ContactForm = () => {
                 id="message"
                 label="Message"
                 name="message"
-                // onChange={handleChange("message")}
+                onChange={handleChange("message")}
                 margin="normal"
                 multiline
                 rowsMax="4"

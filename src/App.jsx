@@ -28,6 +28,15 @@ const theme = createTheme({
       'Poppins',
       'sans-serif',
     ].join(','),
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 670,
+      md: 900,
+      lg: 1024,
+      xl: 1200
+    }
   }
 });
 
