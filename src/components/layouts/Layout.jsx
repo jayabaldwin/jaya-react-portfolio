@@ -8,20 +8,34 @@ import Grid from '@mui/material/Grid';
 //   textAlign: 'center',
 // }));
 
+
+
+
 export default function Layout({ children }) {
+
+  const styles = {
+    rightSocials: {
+      display: 'flex',
+      flexDirection: 'column',
+      position: 'fixed',
+      right: '50px',
+      top: '25vh',
+    }
+  }
+
   return (
       <Grid container={true} spacing={2}>
         {/* Logo */}
-        <Grid item={true} xs={0} sm={0} md={2}>
+        <Grid item={true} xs={1} sm={0} md={1}>
             <LeftLogo />
         </Grid>
         {/* Main content */}
-        <Grid item={true} xs={12} sm={10} md={8} sx={{marginLeft: '12px'}}>
+        <Grid item={true} xs={10} sm={9} md={9} sx={{marginLeft: '12px'}}>
             {children}
         </Grid>
         {/* Socials sidebar */}
-        <Grid item={true} xs={0} sm={2} md={2}>
-          <RightSocial />
+        <Grid item={true} xs={1} sm={3} md={2}>
+          <RightSocial styles={styles.rightSocials} placement={'right'} color={'primary'} />
         </Grid>
       </Grid>
   );

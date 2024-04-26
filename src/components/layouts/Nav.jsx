@@ -3,18 +3,12 @@ import { NavLink as RouterLink, useLocation, useNavigate } from "react-router-do
 import { Link as ScrollLink } from "react-scroll";
 import { useMediaQuery } from '@mui/material';
 import * as Scroll from "react-scroll";
-// import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-
-// import List from '@mui/material/List';
+import MenuIcon from '@mui/icons-material/Menu';
 import Divider from '@mui/material/Divider';
-// import ListItem from '@mui/material/ListItem';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
-// import InboxIcon from '@mui/icons-material/MoveToInbox';
-// import MailIcon from '@mui/icons-material/Mail';
+import RightSocial from './RightSocial.jsx';
+
 
 const Navigation = () => {
   const path = useLocation().pathname;
@@ -39,22 +33,29 @@ const Navigation = () => {
     <>
       {isMobile ? (
         <>
-          <Button onClick={() => setOpenDrawer(true)}>Open Drawer</Button>
+          <Button onClick={() => setOpenDrawer(true)}>
+            <MenuIcon 
+              size="large"
+              edge="start"
+              color="secondary"
+              aria-label="menu"
+              sx={{ position: 'fixed'}}/>
+          </Button>
           <Drawer
             anchor="left"
             open={openDrawer}
             onClose={() => setOpenDrawer(false)}
             sx={{
               '& .MuiDrawer-paper': {
-                width: '40%',
+                width: '30%',
                 backgroundColor: 'rgba(0, 0, 0, 0.7)', 
                 padding: '1.5rem'
               },
             }}
           >
-           <>
+           <ul style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0'}}>
            <img src="src/assets/images/jaya-logo.png" alt="Logo" style={{width: '120px', height: 'auto' }} />
-              <Divider />
+              <Divider variant='center' color='#ffffff'/>
                 <li>
                   {" "}
                   <Button color="white">
@@ -82,7 +83,10 @@ const Navigation = () => {
                     <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
                   </Button>
                 </li>
-              </>
+                <li>
+                <RightSocial />
+                </li>
+              </ul>
           </Drawer>
         </>
       ) : (

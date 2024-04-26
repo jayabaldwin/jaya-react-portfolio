@@ -37,6 +37,7 @@ export default function LeftLogo() {
     <Grid
       container
       style={styles.container}
+      sx={{ ".MuiGrid-root.MuiGrid-item.MuiGrid-grid-md-1.css-1ik6pgl-MuiGrid-root": {paddingLeft: '0px'}}}
     >
       {/* Logo */}
       {!isMobile ? (
