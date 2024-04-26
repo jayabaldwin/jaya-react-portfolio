@@ -6,8 +6,6 @@ import animationData from '../../utils/rightArrowAnimate.json'
 
 const Item = styled('div')(() => ({
   backgroundColor: 'transparent',
-  marginTop: '12rem',
-  marginBottom: '18rem'
 }));
 
 const styles = {
@@ -32,8 +30,8 @@ export default function Intro() {
   return (
     <Grid container={true} id="home" spacing={2}>
       <Grid xs={12} sm={10} md={8}>
-        <Item sx={{ textAlign: 'left' }}>
-          <h2>Jaya Baldwin</h2>
+        <Item className='intro' sx={{ textAlign: 'left' }}>
+          <h2 className='name'>Jaya Baldwin</h2>
           <h1>Web +</h1>
           <h1 style={styles.dev}>Developer</h1>
           <h3 style={styles.connect} onClick={handleConnectClick}>

@@ -28,6 +28,12 @@ const theme = createTheme({
       'Poppins',
       'sans-serif',
     ].join(','),
+    h1: {
+      fontSize: '5rem',
+      '@media (max-width: 600px)': {
+        fontSize: '2rem'
+      }
+    }
   },
   breakpoints: {
     values: {
