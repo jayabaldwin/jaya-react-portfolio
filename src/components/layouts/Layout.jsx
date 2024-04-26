@@ -1,27 +1,35 @@
 import LeftLogo from "./LeftLogo.jsx"
 import RightSocial from "./RightSocial.jsx"
-import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-
-// const Item = styled(Box)(({ theme }) => ({
-//   textAlign: 'center',
-// }));
+import { useMediaQuery } from '@mui/material';
 
 export default function Layout({ children }) {
+  const isMobile = useMediaQuery('(max-width:700px)');
+
+  const styles = {
+    rightSocials: {
+      display: 'flex',
+      flexDirection: 'column',
+      position: 'fixed',
+      right: '50px',
+      top: '25vh',
+    }
+  }
+
   return (
       <Grid container={true} spacing={2}>
-        {/* Logo */}
-        <Grid item={true} xs={2}>
-            <LeftLogo />
+     
+        <Grid item={true} xs={0.5} sm={0.5} md={1}>
+          <LeftLogo />
         </Grid>
-        {/* Main content */}
-        <Grid item={true} xs={8} sx={{marginLeft: '12px'}}>
+  
+        <Grid item={true} xs={10.5} sm={9.5} md={9}>
             {children}
         </Grid>
-        {/* Socials sidebar */}
-        <Grid item={true} xs={2}>
-          <RightSocial />
+       
+        <Grid item={true} xs={0} sm={2} md={2}>
+          {isMobile ? ('') : (
+          <RightSocial styles={styles.rightSocials} placement={'right'} color={'primary'} background={'transparent'} />)}
         </Grid>
       </Grid>
   );
