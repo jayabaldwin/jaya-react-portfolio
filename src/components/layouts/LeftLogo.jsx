@@ -23,7 +23,7 @@ const styles = {
   up: {
     background: 'transparent',
     position: 'fixed',
-    left: '10px',
+    left: '15px',
     bottom: '15px'
   }
 }
