@@ -49,7 +49,7 @@ const Navigation = () => {
               edge="start"
               color="secondary"
               aria-label="menu"
-              sx={{ position: 'fixed'}}/>
+              sx={{ position: 'fixed', left: '20px'}}/>
           </Button>
           <Drawer
             anchor="left"

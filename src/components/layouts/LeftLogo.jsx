@@ -24,7 +24,8 @@ const styles = {
   up: {
     background: 'transparent',
     position: 'fixed',
-    top: '87vh'
+    left: '10px',
+    bottom: '15px'
   }
 }
 
@@ -41,7 +42,7 @@ export default function LeftLogo() {
     >
       {/* Logo */}
       {!isMobile ? (
-        <img src="/src/assets/images/jaya-logo.png'" alt="Logo" style={styles.logo} />) : ('')}
+        <img src="src/assets/images/jaya-logo.png" alt="Logo" style={styles.logo} />) : ('')}
       {/* Nav */}
       <Navigation style={styles.nav}/>
       {/* Return to top icon if not on contact page */}

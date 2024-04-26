@@ -19,11 +19,11 @@ export default function Layout({ children }) {
   return (
       <Grid container={true} spacing={2}>
      
-        <Grid item={true} xs={0.5} sm={0} md={1}>
+        <Grid item={true} xs={0.5} sm={0.5} md={1}>
           <LeftLogo />
         </Grid>
   
-        <Grid item={true} xs={10.5} sm={10} md={9}>
+        <Grid item={true} xs={10.5} sm={9.5} md={9}>
             {children}
         </Grid>
        

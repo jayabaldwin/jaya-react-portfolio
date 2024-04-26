@@ -40,7 +40,7 @@ export default function About() {
         </Grid>
         <Grid item="true" xs={12} sm={5} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Item>
-            <img src='/src/assets/images/profile_image.png' alt="Profile Image" style={{ width: '240px' }} />
+            <img src='/src/assets/images/profile-image.png' alt="Profile Image" style={{ width: '240px' }} />
           </Item>
         </Grid>
       </Grid>
