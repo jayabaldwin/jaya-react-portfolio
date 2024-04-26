@@ -1,6 +1,6 @@
 import Grid from '@mui/system/Unstable_Grid';
 import styled from '@mui/system/styled';
-// import ProfileImage from '../../assets/images/profile_image.png'
+import Profile from '../../assets/images/profile-image.png'
 
 const Item = styled('div')(({ theme }) => ({
   background: 'transparent',
@@ -40,7 +40,7 @@ export default function About() {
         </Grid>
         <Grid item="true" xs={12} sm={5} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Item>
-            <img src='/src/assets/images/profile-image.png' alt="Profile Image" style={{ width: '240px' }} />
+            <img src={Profile} alt="Profile Image" style={{ width: '240px' }} />
           </Item>
         </Grid>
       </Grid>

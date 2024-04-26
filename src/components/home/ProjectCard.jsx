@@ -20,12 +20,6 @@ const styles = {
     opacity: '1'
 
   },
-  // hover: {
-  //   // position: 'absolute',
-  //   background: '#1f3d4738',
-  //   backdropFilter: 'blue(5px)'
-
-  // },
   icons: {
     display: 'flex',
     flexDirection: 'row',
@@ -66,8 +60,8 @@ export default function ProjectCard({ img, title, subtitle, github, website, chi
       { img && <CardMedia
         style={styles.image}
         component="img"
-        alt={img}
-        image={`/src/assets/images/${img}.png`}
+        alt={title}
+        image={img}
       /> }
       </div>
       <CardContent>
