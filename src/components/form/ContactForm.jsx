@@ -8,17 +8,20 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import { width } from '@mui/system';
 
 
 const styles = {
   contactForm: {
-    marginTop: '1.5rem',
-    width: '60vh'
+    width: '100%'
   },
-  // contactFrame: {
-  //   background: 'white',
-  //   border: '#ffffff'
-  // }
+  contactFrame: {
+    backgroundColor: '#ffffff6b',
+    borderRadius: '15px',
+    padding: '30px',
+    marginTop: '20px',
+    width: '70%'
+  }
 };
 
 const ContactForm = () => {
@@ -80,7 +83,7 @@ const ContactForm = () => {
         {'Contact Form'.toUpperCase()}
       </Typography>
       <Grid container direction="column" justify="center" alignItems="center">
-        <Grid item>
+        <Grid item style={styles.contactFrame}>
           <form
             id="contact-form"
             ref={form}
