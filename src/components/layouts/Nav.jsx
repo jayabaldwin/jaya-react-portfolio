@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import Divider from '@mui/material/Divider';
 import RightSocial from './RightSocial.jsx';
+import Logo from '../../assets/images/jaya-logo.png'
 
 
 const Navigation = () => {
@@ -25,6 +26,15 @@ const Navigation = () => {
       spy: true
     });
   };
+
+  const styles = {
+    rightSocials: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      marginTop: '3rem'
+    }
+  }
 
   const [openDrawer, setOpenDrawer] = React.useState(false);
   const isMobile = useMediaQuery('(max-width:900px)');
@@ -47,14 +57,14 @@ const Navigation = () => {
             onClose={() => setOpenDrawer(false)}
             sx={{
               '& .MuiDrawer-paper': {
-                width: '30%',
+                width: '35%',
                 backgroundColor: 'rgba(0, 0, 0, 0.7)', 
                 padding: '1.5rem'
               },
             }}
           >
            <ul style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0'}}>
-           <img src="src/assets/images/jaya-logo.png" alt="Logo" style={{width: '120px', height: 'auto' }} />
+           <img src={Logo} alt="Logo" style={{width: '120px', height: 'auto' }} />
               <Divider variant='center' color='#ffffff'/>
                 <li>
                   {" "}
@@ -84,7 +94,7 @@ const Navigation = () => {
                   </Button>
                 </li>
                 <li>
-                <RightSocial />
+                <RightSocial styles={styles.rightSocials} placement={'right'} color={'secondary'} />
                 </li>
               </ul>
           </Drawer>

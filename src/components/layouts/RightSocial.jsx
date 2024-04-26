@@ -27,7 +27,7 @@ const StyledTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-export default function RightSocial({styles, placement, color}) {
+export default function RightSocial({styles, placement, color, background}) {
   return (
     <Box style={styles}>
       {socialIcons.map(({ icon, label, href }, index) => (
@@ -43,7 +43,7 @@ export default function RightSocial({styles, placement, color}) {
           href={href}
           sx={{
             marginTop: '15px',
-            background: 'transparent', 
+            background: {background}, 
             boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)'
           }}>
             {icon}
