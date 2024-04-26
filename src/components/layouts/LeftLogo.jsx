@@ -5,6 +5,7 @@ import Navigation from "./Nav.jsx";
 import { Link as ScrollLink } from 'react-scroll';
 import { useLocation } from "react-router-dom";
 import { useMediaQuery } from '@mui/material';
+// import Logo from '../../assets/images/jaya-logo.png'
 
 
 const styles = {
@@ -12,7 +13,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column', 
     alignItems: 'flex-start', 
-    height: '90vh', 
+    // height: '90vh', 
     justifyContent: 'space-between',
   },
   logo: {
@@ -37,11 +38,10 @@ export default function LeftLogo() {
     <Grid
       container
       style={styles.container}
-      sx={{ ".MuiGrid-root.MuiGrid-item.MuiGrid-grid-md-1.css-1ik6pgl-MuiGrid-root": {paddingLeft: '0px'}}}
     >
       {/* Logo */}
       {!isMobile ? (
-        <img src="src/assets/images/jaya-logo.png" alt="Logo" style={styles.logo} />) : ('')}
+        <img src="/src/assets/images/jaya-logo.png'" alt="Logo" style={styles.logo} />) : ('')}
       {/* Nav */}
       <Navigation style={styles.nav}/>
       {/* Return to top icon if not on contact page */}

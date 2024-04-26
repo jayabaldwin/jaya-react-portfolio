@@ -19,7 +19,8 @@ const styles = {
     borderRadius: '15px',
     padding: '30px',
     marginTop: '20px',
-    width: '70%'
+    width: '100%',
+    maxWidth: '600px'
   }
 };
 
@@ -153,7 +154,6 @@ const ContactForm = () => {
         <Alert
           onClose={handleClose}
           severity={notificationSeverity}
-          // variant="filled"
           sx={{ width: '100%' }}
         >
           {notificationMessage}

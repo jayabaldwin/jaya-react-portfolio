@@ -7,8 +7,6 @@ import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Chip from '@mui/material/Chip';
-import { display, padding, positions, width } from '@mui/system';
-import { Opacity } from '@mui/icons-material';
 
 const styles = {
   card: {
