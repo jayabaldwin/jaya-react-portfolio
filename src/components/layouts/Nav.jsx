@@ -38,6 +38,8 @@ const Navigation = () => {
 
   const [openDrawer, setOpenDrawer] = React.useState(false);
   const isMobile = useMediaQuery('(max-width:900px)');
+  const secondNav = useMediaQuery('(max-width:700px)');
+
 
   return (
     <>
@@ -96,7 +98,7 @@ const Navigation = () => {
                     </Button>
                   </li>
                   <li>
-                    <RightSocial styles={styles.rightSocials} placement={'right'} color={'secondary'} />
+                    <RightSocial styles={styles.rightSocials} placement={'right'} color={'primary'} />
                   </li>
                 </>
               ) : (
@@ -116,6 +118,11 @@ const Navigation = () => {
                       <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
                     </Button>
                   </li>
+                  {secondNav ? (
+                    <li>
+                      <RightSocial styles={styles.rightSocials} placement={'right'} color={'primary'} />
+                    </li>
+                  ) : ('')}
                 </>
               )}
             </ul>

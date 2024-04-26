@@ -29,7 +29,7 @@ export default function Layout({ children }) {
        
         <Grid item={true} xs={0} sm={1.5} md={2} lg={2}>
           {isMobile ? ('') : (
-          <RightSocial styles={styles.rightSocials} placement={'right'} color={'primary'} background={'transparent'} />)}
+          <RightSocial styles={styles.rightSocials} placement={'right'} color={'primary'} />)}
         </Grid>
       </Grid>
   );
