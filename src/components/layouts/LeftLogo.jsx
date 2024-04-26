@@ -4,6 +4,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Navigation from "./Nav.jsx";
 import { Link as ScrollLink } from 'react-scroll';
 import { useLocation } from "react-router-dom";
+import { useMediaQuery } from '@mui/material';
 
 
 const styles = {
@@ -29,15 +30,17 @@ const styles = {
 export default function LeftLogo() {
   const path = useLocation().pathname;
   const location = path.split("/")[1];
+  const isMobile = useMediaQuery('(max-width:900px)');
+
 
   return (
     <Grid
       container
-      // flexDirection='column'
       style={styles.container}
     >
       {/* Logo */}
-      <img src="src/assets/images/jaya-logo.png" alt="Logo" style={styles.logo} />
+      {!isMobile ? (
+        <img src="src/assets/images/jaya-logo.png" alt="Logo" style={styles.logo} />) : ('')}
       {/* Nav */}
       <Navigation style={styles.nav}/>
       {/* Return to top icon if not on contact page */}

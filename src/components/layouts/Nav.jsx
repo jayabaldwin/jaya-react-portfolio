@@ -1,12 +1,20 @@
-import { Button } from "@mui/material";
-import React from "react";
+import * as React from 'react';
 import { NavLink as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
+import { useMediaQuery } from '@mui/material';
 import * as Scroll from "react-scroll";
+// import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
 
-const styles = {
-
-}
+// import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+// import ListItem from '@mui/material/ListItem';
+// import ListItemButton from '@mui/material/ListItemButton';
+// import ListItemIcon from '@mui/material/ListItemIcon';
+// import ListItemText from '@mui/material/ListItemText';
+// import InboxIcon from '@mui/icons-material/MoveToInbox';
+// import MailIcon from '@mui/icons-material/Mail';
 
 const Navigation = () => {
   const path = useLocation().pathname;
@@ -24,72 +32,221 @@ const Navigation = () => {
     });
   };
 
+  const [openDrawer, setOpenDrawer] = React.useState(false);
+  const isMobile = useMediaQuery('(max-width:900px)');
+
   return (
-      <nav id="navigation">
-        <ul  
-        style={{
-          display: 'flex',
-          rotate: '-90deg',
-          transformOrigin: 'left',
-          position: 'fixed',
-          top: '36.5rem',
-          marginLeft: '20px',
-          }}>
-          {location !== "Contact" ? (
-            <>
-              <li>
-                {" "}
-                <Button color="white">
-                  <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
-                    Home
-                  </ScrollLink>
-                </Button>
-              </li>
-              <li>
-                <Button color="white">
-                  <ScrollLink to="about" spy={true} smooth={true} offset={-75} duration={500}>
-                    About
-                  </ScrollLink>
-                </Button>
-              </li>
-              <li>
-              <Button color="white">
-                <ScrollLink to="projects" spy={true} smooth={true} offset={-75} duration={500}>
-                  Projects
-                </ScrollLink>
-              </Button>
-              </li>
-              <li>
-              <Button color="white">
-                <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
-              </Button>
-              </li>
-            </>
-          ) : (
-            <>
-              <li>
-                {" "}
-                <Button color="white" onClick={() => goToPageAndScroll("home")}>Home</Button>
-              </li>
-              <li>
-                <Button color="white" onClick={() => goToPageAndScroll("about")}>About</Button>
-              </li>
-              <li>
-                <Button color="white" onClick={() => goToPageAndScroll("projects")}>Projects</Button>
-              </li>
-              <li>
-                <Button color="white">
-                  <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
-                </Button>
-              </li>
-            </>
-          )}
-        </ul>
-      </nav>
+    <>
+      {isMobile ? (
+        <>
+          <Button onClick={() => setOpenDrawer(true)}>Open Drawer</Button>
+          <Drawer
+            anchor="left"
+            open={openDrawer}
+            onClose={() => setOpenDrawer(false)}
+            sx={{
+              '& .MuiDrawer-paper': {
+                width: '40%',
+                backgroundColor: 'rgba(0, 0, 0, 0.7)', 
+                padding: '1.5rem'
+              },
+            }}
+          >
+           <>
+           <img src="src/assets/images/jaya-logo.png" alt="Logo" style={{width: '120px', height: 'auto' }} />
+              <Divider />
+                <li>
+                  {" "}
+                  <Button color="white">
+                    <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+                      Home
+                    </ScrollLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button color="white">
+                    <ScrollLink to="about" spy={true} smooth={true} offset={-75} duration={500}>
+                      About
+                    </ScrollLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button color="white">
+                    <ScrollLink to="projects" spy={true} smooth={true} offset={-75} duration={500}>
+                      Projects
+                    </ScrollLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button color="white">
+                    <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
+                  </Button>
+                </li>
+              </>
+          </Drawer>
+        </>
+      ) : (
+        <nav id="navigation">
+          <ul  
+            style={{
+              display: 'flex',
+              rotate: '-90deg',
+              transformOrigin: 'left',
+              position: 'fixed',
+              top: '36.5rem',
+              marginLeft: '20px',
+            }}
+          >
+            {location !== "Contact" ? (
+              <>
+                <li>
+                  {" "}
+                  <Button color="white">
+                    <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+                      Home
+                    </ScrollLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button color="white">
+                    <ScrollLink to="about" spy={true} smooth={true} offset={-75} duration={500}>
+                      About
+                    </ScrollLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button color="white">
+                    <ScrollLink to="projects" spy={true} smooth={true} offset={-75} duration={500}>
+                      Projects
+                    </ScrollLink>
+                  </Button>
+                </li>
+                <li>
+                  <Button color="white">
+                    <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
+                  </Button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  {" "}
+                  <Button color="white" onClick={() => goToPageAndScroll("home")}>Home</Button>
+                </li>
+                <li>
+                  <Button color="white" onClick={() => goToPageAndScroll("about")}>About</Button>
+                </li>
+                <li>
+                  <Button color="white" onClick={() => goToPageAndScroll("projects")}>Projects</Button>
+                </li>
+                <li>
+                  <Button color="white">
+                    <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
+                  </Button>
+                </li>
+              </>
+            )}
+          </ul>
+        </nav>
+      )}
+    </>
   );
 };
 
 export default Navigation;
+
+// import { Button } from "@mui/material";
+// import React from "react";
+// import { NavLink as RouterLink, useLocation, useNavigate } from "react-router-dom";
+// import { Link as ScrollLink } from "react-scroll";
+// import * as Scroll from "react-scroll";
+
+// const styles = {
+
+// }
+
+// const Navigation = () => {
+//   const path = useLocation().pathname;
+//   const location = path.split("/")[1];
+//   const navigate = useNavigate();
+//   const scroller = Scroll.scroller;
+
+//   const goToPageAndScroll = async (selector) => {
+//     await navigate("/");
+//     await scroller.scrollTo(selector, {
+//       duration: 500,
+//       smooth: true,
+//       offset: -75,
+//       spy: true
+//     });
+//   };
+
+//   return (
+//       <nav id="navigation">
+//         <ul  
+//         style={{
+//           display: 'flex',
+//           rotate: '-90deg',
+//           transformOrigin: 'left',
+//           position: 'fixed',
+//           top: '36.5rem',
+//           marginLeft: '20px',
+//           }}>
+//           {location !== "Contact" ? (
+//             <>
+//               <li>
+//                 {" "}
+//                 <Button color="white">
+//                   <ScrollLink to="home" spy={true} smooth={true} offset={-75} duration={500}>
+//                     Home
+//                   </ScrollLink>
+//                 </Button>
+//               </li>
+//               <li>
+//                 <Button color="white">
+//                   <ScrollLink to="about" spy={true} smooth={true} offset={-75} duration={500}>
+//                     About
+//                   </ScrollLink>
+//                 </Button>
+//               </li>
+//               <li>
+//               <Button color="white">
+//                 <ScrollLink to="projects" spy={true} smooth={true} offset={-75} duration={500}>
+//                   Projects
+//                 </ScrollLink>
+//               </Button>
+//               </li>
+//               <li>
+//               <Button color="white">
+//                 <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
+//               </Button>
+//               </li>
+//             </>
+//           ) : (
+//             <>
+//               <li>
+//                 {" "}
+//                 <Button color="white" onClick={() => goToPageAndScroll("home")}>Home</Button>
+//               </li>
+//               <li>
+//                 <Button color="white" onClick={() => goToPageAndScroll("about")}>About</Button>
+//               </li>
+//               <li>
+//                 <Button color="white" onClick={() => goToPageAndScroll("projects")}>Projects</Button>
+//               </li>
+//               <li>
+//                 <Button color="white">
+//                   <RouterLink to="/Contact" style={{textDecoration: 'none', color: 'white'}}>Contact</RouterLink>
+//                 </Button>
+//               </li>
+//             </>
+//           )}
+//         </ul>
+//       </nav>
+//   );
+// };
+
+// export default Navigation;
 
 
 
