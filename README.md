@@ -9,12 +9,6 @@ This weeks project was probably the one I've been most looking forward to. We ha
 
 **Week 20** [Portfolio](https://jayabaldwin.com/) vs. **Week 02** [Portfolio](https://jayabaldwin.github.io/jaya-baldwin-portfolio/)
 
-<br>
-
-### Walkthrough:
-[Jaya Baldwin Portfolio](./src/assets/portfolio.gif)
-
-
 ## Table of Contents
 
 - [Installation](#installation)
