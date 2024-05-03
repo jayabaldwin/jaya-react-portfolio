@@ -1,8 +1,8 @@
-import Grid from '@mui/system/Unstable_Grid';
-import styled from '@mui/system/styled';
-// import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
-import Lottie from 'lottie-react'
-import animationData from '../../utils/rightArrowAnimate.json'
+import Grid from "@mui/system/Unstable_Grid";
+import { lazy } from "react";
+import styled from "@mui/system/styled";
+const Lottie = lazy(() => import("lottie-react")); // dynamic import
+import animationData from "../../utils/rightArrowAnimate.json";
 
 const Item = styled('div')(() => ({
   backgroundColor: 'transparent',
