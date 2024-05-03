@@ -41,6 +41,7 @@ const Navigation = () => {
 
   const [openDrawer, setOpenDrawer] = React.useState(false);
   const isMobile = useMediaQuery("(max-width:900px)");
+  const isSmaller = useMediaQuery("(max-width:670px)");
 
   return (
     <>
@@ -142,11 +143,12 @@ const Navigation = () => {
                     </Button>
                   </li>
                   <li>
-                    <RightSocial
+                      {isSmaller ? 
+                      (<RightSocial
                       styles={styles.rightSocials}
                       placement={"right"}
-                      color={"secondary"}
-                    />
+                      color={"primary"}
+                    />) : ('')} 
                   </li>
                 </ul>
               </Drawer>
@@ -226,11 +228,12 @@ const Navigation = () => {
                     </Button>
                   </li>
                   <li>
-                    <RightSocial
+                      {isSmaller ? 
+                      (<RightSocial
                       styles={styles.rightSocials}
                       placement={"right"}
-                      color={"secondary"}
-                    />
+                      color={"primary"}
+                    />) : ('')}
                   </li>
                 </ul>
               </Drawer>

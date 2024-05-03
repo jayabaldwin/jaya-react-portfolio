@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import { useMediaQuery } from '@mui/material';
 
 export default function Layout({ children }) {
-  const isMobile = useMediaQuery('(max-width:700px)');
+  const isMobile = useMediaQuery('(max-width:670px)');
 
   const styles = {
     rightSocials: {
