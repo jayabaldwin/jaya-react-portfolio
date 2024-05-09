@@ -11,6 +11,7 @@ import mongodb from '../../assets/icons/mongodb.png'
 import mysql from '../../assets/icons/mysql.png'
 import sequelize from '../../assets/icons/sequelize.png'
 import github from '../../assets/icons/github.png'
+import graphql from '../../assets/icons/graphql.png'
 
 
 const Item = styled('div')(({ theme }) => ({
@@ -25,10 +26,11 @@ const technologies = [
     materialUI, 
     bootstrap, 
     css3, 
+    graphql,
     mongodb, 
     mysql, 
     sequelize, 
-    github
+    github,
 ]
 
 export default function Gallery() {

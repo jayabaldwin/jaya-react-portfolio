@@ -7,7 +7,8 @@ import elevate from '../../assets/images/elevate.png'
 import weatherDashboard from '../../assets/images/weather-dashboard.png'
 import socialNetwork from '../../assets/images/social-network-api.png'
 import ecommerce from '../../assets/images/e-commerce-backend.png'
-import employeeTracker from '../../assets/images/employee-tracker.png'
+// import employeeTracker from '../../assets/images/employee-tracker.png'
+import florin from '../../assets/images/florin.png'
 
 const Item = styled('div')(({ theme }) => ({
   padding: theme.spacing(1),
@@ -31,6 +32,14 @@ const projectData = [
     github: 'https://github.com/jayabaldwin/jaya-react-portfolio', 
     website: 'www.jayabaldwin.com',
     chips: ['React.js', 'Node.js', 'Material UI']
+  },
+  {
+    img: florin, 
+    title: 'Florin: Budget Better', 
+    subtitle: 'Budget and expense tracking software', 
+    github: 'https://github.com/jayabaldwin/budget-app', 
+    website: 'https://budget-app-bkwy.onrender.com/',
+    chips: ['MERN', 'GraphQL', 'Material UI']
   },
   {
     img: elevate, 
@@ -62,13 +71,13 @@ const projectData = [
     github: 'https://github.com/jayabaldwin/e-commerce-backend', 
     chips: ['Node.js', 'MySQL', 'Sequelize', 'Express.js']
   },
-  {
-    img: employeeTracker, 
-    title: 'SQL: Employee Tracker', 
-    subtitle: "Content management systems (CMS), CLI application, to manage a company's employee database, using Node.js, Inquirer, and MySQL.", 
-    github: 'https://github.com/jayabaldwin/employee-tracker', 
-    chips: ['Node.js', 'MySQL', 'Inquirer']
-  },
+  // {
+  //   img: employeeTracker, 
+  //   title: 'SQL: Employee Tracker', 
+  //   subtitle: "Content management systems (CMS), CLI application, to manage a company's employee database, using Node.js, Inquirer, and MySQL.", 
+  //   github: 'https://github.com/jayabaldwin/employee-tracker', 
+  //   chips: ['Node.js', 'MySQL', 'Inquirer']
+  // },
   // {
   //   img: 'svg-logo', 
   //   title: 'SVG Logo Generator', 
