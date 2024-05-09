@@ -7,7 +7,9 @@
 
 This weeks project was probably the one I've been most looking forward to. We had to build a personal portfolio to showcase our projects and what we've learnt throughtout these last (almost) 6 months. I decided to learn a new CSS library for the project which was Material UI, which although proved troublesome at first, especially whilst learning React simultaneously, I think I finally got the hang of it. Learning MUI was integral for me as we approach our final project (MERN Stack), basically the culmination of everything we've learnt through the duration of this bootcamp. I struggled with this project, mainly because I'm very meticulous about things, but I came to realise this (like many applications), will never just be "finished", it will be constantly evolving and improving as I do, so even if I make it absolutley 'perfect' right now, inevitably that would only be temporary. So I'm marking this one as a work in progress! As an entertaining comparison I've attached a link to my initial portfolio I made with just HTML and CSS the 2nd week of the course vs the React/MUI portfolio, 18 weeks later.
 
-**Week 20** [Portfolio](https://jayabaldwin.com/) vs. **Week 02** [Portfolio](https://jayabaldwin.github.io/jaya-baldwin-portfolio/)
+**Week 20** [Deployed React Portfolio](https://jayabaldwin.com/) vs. **Week 02** [CSS3 Portfolio on GitPages](https://jayabaldwin.github.io/jaya-baldwin-portfolio/)
+
+![Portfolio Walkthrough](./src/assets/portfolio-gif.gif)
 
 ## Table of Contents
 
